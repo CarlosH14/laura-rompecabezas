@@ -84,7 +84,9 @@ export default function Futuro({ juego, datos, onCompletar }) {
                 {el.emoji}
               </span>
               {abierto && (
-                <span className="mt-1 rounded-full bg-black/35 px-1.5 text-[10px] font-medium text-white">
+                // Una sola línea. La escena recorta lo que se sale, así que los
+                // títulos tienen que ser cortos (ver el aviso en minijuegos.js).
+                <span className="mt-1 rounded-full bg-black/40 px-1.5 text-[10px] font-medium whitespace-nowrap text-white">
                   {el.titulo}
                 </span>
               )}

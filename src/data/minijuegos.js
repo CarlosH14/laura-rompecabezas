@@ -156,22 +156,76 @@ const palabrasSopa = [
 // ─── #5 FUTURO ───────────────────────────────────────────────
 // x / y van en PORCENTAJE del lienzo (0-100) para que se vea bien
 // igual en un móvil de 375px y en un monitor grande.
+//
+// OJO CON LOS TÍTULOS: salen como etiqueta bajo cada emoji dentro de la
+// escena, que recorta lo que se sale por los lados. Máximo ~18 caracteres,
+// y a los que estén cerca de los bordes (x menor que 20 o mayor que 75)
+// déjales títulos aún más cortos.
 const suenos = [
-  { x: 20, y: 20, emoji: '✈️', titulo: 'Viajes',   sueno: 'EDITA: el primer lugar al que quiero llevarte, y por qué justo ese.' },
-  { x: 72, y: 17, emoji: '🏡', titulo: 'Una casa', sueno: 'EDITA: cómo te imaginas el lugar donde vivan. La cocina, la ventana, el desorden.' },
-  { x: 14, y: 58, emoji: '🐶', titulo: 'Un perro', sueno: 'EDITA: hasta el nombre. Ponle nombre, en serio.' },
-  { x: 48, y: 42, emoji: '☕', titulo: 'Mañanas',  sueno: 'EDITA: los domingos sin alarma, sin apuro, sin nadie más.' },
-  { x: 80, y: 60, emoji: '💃', titulo: 'Baile',    sueno: 'EDITA: esa fiesta, esa canción, ustedes dos y nadie mirando.' },
-  { x: 44, y: 80, emoji: '💫', titulo: 'Lo demás', sueno: 'EDITA: lo que todavía no sabemos, y que igual quiero descubrir contigo.' },
+  {
+    x: 20, y: 20, emoji: '👶', titulo: 'Azul',
+    sueno:
+      'Ya le pusimos nombre y todo, sin tener apuro ni fecha: Azul. Y si resulta que es niño, Gael. Me parece una locura preciosa que dos personas se pongan de acuerdo en el nombre de alguien que todavía no existe.',
+  },
+  {
+    x: 72, y: 17, emoji: '🐶', titulo: 'Odiseo',
+    sueno:
+      'Nuestro perro se va a llamar Odiseo y ese punto ya no se discute. Nombre tiene. Lo único que le falta es llegar.',
+  },
+  {
+    x: 14, y: 58, emoji: '✈️', titulo: 'Viajes',
+    sueno:
+      'San Andrés el año que viene, que ya está hablado. Y algún día, cuando se pueda, Disney: más que por el parque, por verte a ti la cara cuando entremos. Esa es la foto que quiero.',
+  },
+  {
+    x: 48, y: 42, emoji: '🏡', titulo: 'La casa',
+    sueno:
+      'Con una biblioteca grande, un jardín, una cocina con isla y un sofá enorme con su tele. Y un cuarto para trabajar los dos, cada uno en lo suyo: tú buscándole los errores a todo y yo poniéndolos. Eso también es amor.',
+  },
+  {
+    x: 74, y: 60, emoji: '☕', titulo: 'Los días normales',
+    sueno:
+      'Todavía no vivimos juntos, y aun así los fines de semana contigo son lo mejor que tengo. Lo que más ganas tengo de que pase no es nada grande: es que dejen de ser solo fines de semana.',
+  },
+  {
+    x: 44, y: 80, emoji: '♾️', titulo: 'Toda la vida',
+    sueno:
+      'Quiero amarte toda la vida. Y quiero que te quede clarísimo, por si alguna vez te entra la duda: no voy a amar a nadie más.',
+  },
 ]
 
 // ─── #6 CUENTA REGRESIVA ─────────────────────────────────────
 const sorpresas = [
-  { numero: 1, titulo: 'Sorpresa #1', emoji: '🎁', contenido: 'EDITA: hay un regalo que todavía no has visto. Está más cerca de lo que crees.', gradiente: 'from-[#f093fb] to-[#f5576c]' },
-  { numero: 2, titulo: 'Sorpresa #2', emoji: '🍽️', contenido: 'EDITA: vamos a comer en un lugar que elegí pensando en ti.',                      gradiente: 'from-[#fa709a] to-[#fee140]' },
-  { numero: 3, titulo: 'Sorpresa #3', emoji: '🎶', contenido: 'EDITA: preparé una playlist. Vas a reconocer la primera canción.',                gradiente: 'from-[#667eea] to-[#764ba2]' },
-  { numero: 4, titulo: 'Sorpresa #4', emoji: '📷', contenido: 'EDITA: quiero una foto nueva contigo hoy. La primera de las que siguen.',          gradiente: 'from-[#4facfe] to-[#00c9c8]' },
-  { numero: 5, titulo: 'Sorpresa #5', emoji: '💌', contenido: 'EDITA: y me queda una cosa por decirte, pero esa te la digo de frente.',           gradiente: 'from-[#764ba2] to-[#fa709a]' },
+  {
+    numero: 1, titulo: 'Nos vamos', emoji: '🧳', gradiente: 'from-[#667eea] to-[#764ba2]',
+    contenido:
+      'Hacemos maleta. No va a ser el viaje más largo que hagamos en la vida, pero es el próximo — y el próximo siempre es el que más ilusión hace.',
+  },
+  {
+    numero: 2, titulo: 'El parque', emoji: '🎡', gradiente: 'from-[#f093fb] to-[#f5576c]',
+    contenido:
+      'Nos vamos al parque Los Quimbayas, a pasar el día entero. Volver a ser un poco niños un rato, que para eso también estamos.',
+  },
+  {
+    numero: 3, titulo: 'El agua', emoji: '🏊', gradiente: 'from-[#4facfe] to-[#00c9c8]',
+    contenido:
+      'Piscina, sol y cero horarios. El bloqueador lo traes tú, porque a mí seguro se me olvida y los dos lo sabemos.',
+  },
+  {
+    numero: 4, titulo: 'Comer rico', emoji: '🍽️', gradiente: 'from-[#fa709a] to-[#fee140]',
+    contenido:
+      'Vamos a comer bien, de lo que nos gusta, sin mirar el reloj y sin tener que volver a ninguna parte después.',
+  },
+  {
+    numero: 5, titulo: 'Solo nosotros dos', emoji: '🫧', gradiente: 'from-[#f093fb] to-[#fee140]',
+    contenido:
+      'Y cuando ya no quede nadie alrededor, hay un sitio con agua caliente y burbujas esperándonos. Privado. Sin público. Eso es todo lo que voy a decir.',
+  },
+  {
+    numero: 6, titulo: 'La última', emoji: '💋', gradiente: 'from-[#764ba2] to-[#fa709a]',
+    contenido:
+      'Esta no la pienso escribir. Solo te digo que la noche no se acaba cuando se acaba la comida, y que llevo días pensando en ella.',
+  },
 ]
 
 // ─── #7 NUEVE RAZONES ────────────────────────────────────────
@@ -276,7 +330,7 @@ export const MINIJUEGOS = [
   { id: 3, titulo: 'Pasado',         emoji: '📸', tipo: 'timeline',  gradiente: 'from-[#f093fb] to-[#f5576c]', intro: 'Nuestro camino, desde el primer día.',                        contenido: momentos },
   { id: 4, titulo: 'Presente',       emoji: '❤️', tipo: 'sopa',      gradiente: 'from-[#fa709a] to-[#fee140]', intro: 'Ocho palabras escondidas. Todas hablan de ti.',               contenido: palabrasSopa },
   { id: 5, titulo: 'Futuro',         emoji: '🌟', tipo: 'revelar',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Toca cada cosita para ver lo que quiero contigo.',            contenido: suenos },
-  { id: 6, titulo: 'Noche Especial', emoji: '🌙', tipo: 'sorpresas', gradiente: 'from-[#f093fb] to-[#fee140]', intro: `Cinco sorpresas para ${NOCHE_ESPECIAL}. Ábrelas en el orden que quieras.`, contenido: sorpresas },
+  { id: 6, titulo: 'Noche Especial', emoji: '🌙', tipo: 'sorpresas', gradiente: 'from-[#f093fb] to-[#fee140]', intro: `${sorpresas.length} sorpresas para ${NOCHE_ESPECIAL}. Ábrelas en el orden que quieras.`, contenido: sorpresas },
   { id: 7, titulo: '9 Razones',      emoji: '💕', tipo: 'puzzle',    gradiente: 'from-[#fa709a] to-[#fee140]', intro: 'Arma el rompecabezas y aparecen mis nueve razones.',          contenido: razones },
   { id: 8, titulo: 'Momentos',       emoji: '😄', tipo: 'adivina',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Fotos borrosas. Adivina con el menor desenfoque posible.',    contenido: adivinanzas },
   { id: 9, titulo: 'Confesiones',    emoji: '🤐', tipo: 'diario',    gradiente: 'from-[#764ba2] to-[#fa709a]', intro: 'Seis cosas que te he querido decir.',                         contenido: confesiones },
