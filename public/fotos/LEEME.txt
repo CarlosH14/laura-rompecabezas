@@ -5,12 +5,14 @@ Los nombres tienen que coincidir EXACTAMENTE con los de src/data/minijuegos.js.
 Mientras un archivo no exista, la app muestra un placeholder con gradiente que
 dice qué foto falta. No se rompe nada, así que puedes ir poniéndolas de a poco.
 
-Lista completa (20 fotos):
+Lista completa (22 fotos):
 
   Minijuego #1 — Canciones
-    cancion-1.jpg
-    cancion-2.jpg
-    cancion-3.jpg
+    cancion-1.jpg   ->  A donde vamos (Morat)
+    cancion-2.jpg   ->  Jovenes eternamente (Pol 3.14)
+    cancion-3.jpg   ->  Te quiero (Ricardo Arjona)
+    cancion-4.jpg   ->  Azul (Cristian Castro)
+    cancion-5.jpg   ->  Un amor para la historia (Gilberto Santa Rosa)
 
   Minijuego #3 — Pasado (línea de tiempo)
     timeline-1.jpg

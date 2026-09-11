@@ -226,7 +226,7 @@ export default function Canciones({ juego, datos, onCompletar }) {
           animate={{ opacity: 1, y: 0 }}
           className="text-center text-[15px] font-semibold text-primary"
         >
-          ¡Completaste las tres canciones! 🎶
+          ¡Completaste las {total} canciones! 🎶
         </motion.p>
       )}
     </div>

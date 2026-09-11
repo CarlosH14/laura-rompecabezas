@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import { confettiPequeno, sonar } from '../../utils/efectos'
+import { NOCHE_ESPECIAL } from '../../data/minijuegos'
 
 /**
  * MINIJUEGO #6 — Noche Especial 🌙
- * Cinco botones desordenados. Cada uno esconde una sorpresa de hoy.
+ * Cinco botones desordenados. Cada uno esconde una sorpresa de la noche especial.
  */
 export default function CuentaRegresiva({ datos, onCompletar }) {
   // Se desordenan una vez, al montar, para que no se abran en orden 1-2-3-4-5.
@@ -39,7 +40,7 @@ export default function CuentaRegresiva({ datos, onCompletar }) {
 
   return (
     <div className="flex flex-col gap-4">
-      <h2 className="text-center text-xl font-semibold">Sorpresas para esta noche ✨</h2>
+      <h2 className="text-center text-xl font-semibold">Sorpresas para {NOCHE_ESPECIAL} ✨</h2>
       <p className="-mt-3 text-center text-[13px] text-muted">
         Abiertas: {abiertas.length} de {total}
       </p>
@@ -113,7 +114,7 @@ export default function CuentaRegresiva({ datos, onCompletar }) {
           animate={{ opacity: 1, y: 0 }}
           className="text-center text-[15px] font-semibold text-primary"
         >
-          ¡Faltan pocas horas para que vivas todo esto! 💕
+          Ya falta poquito para que vivas todo esto 💕
         </motion.p>
       )}
     </div>

@@ -13,47 +13,82 @@
  * ════════════════════════════════════════════════════════════
  */
 
+/**
+ * La noche especial.
+ *
+ * Ojo con esto: Laura abre un sobre por día, así que va a abrir el minijuego
+ * #6 VARIOS DÍAS ANTES de la noche en cuestión. Por eso los textos hablan de
+ * "el 19" y no de "esta noche" — si dijeran "esta noche" estarían mintiendo.
+ *
+ * EDITA: si cambia la fecha, cámbiala aquí y se actualiza en toda la app.
+ */
+export const NOCHE_ESPECIAL = 'el 19 de septiembre'
+
 // ─── #1 CANCIONES ────────────────────────────────────────────
+// `correcta` es la posición de la respuesta buena dentro de `opciones`
+// (0 = la primera). Las opciones falsas son canciones reales de los mismos
+// artistas, para que no se adivine por descarte.
 const canciones = [
   {
-    titulo: 'Luna',
-    artista: 'Feid',
-    // EDITA: la opción correcta es la que apunta `correcta` (0 = la primera)
-    opciones: ['Luna', 'Ella baila sola', 'Un x100to'],
+    titulo: 'A dónde vamos',
+    artista: 'Morat',
+    opciones: ['A dónde vamos', 'Cómo te atreves', 'No se va'],
     correcta: 0,
-    audio: 'audio/canciones/luna.mp3',
+    audio: 'audio/canciones/cancion-1.mp3',
     foto: 'fotos/cancion-1.jpg',
     historia:
-      'Esta es "nuestra" canción y creo que tú lo sabes. La escuché mil veces antes de conocerte y no significaba nada; ahora no puedo oír los primeros segundos sin acordarme de ti riéndote de mí porque me sé mal la letra.',
+      'Salíamos de clase de inglés y yo siempre te preguntaba lo mismo: ¿a dónde vamos? La verdad es que casi nunca importaba la respuesta. Lo bueno de la pregunta era el "vamos".',
   },
   {
-    titulo: 'Sonríe',
-    artista: 'Elsa y Elmar',
-    opciones: ['Sonríe', 'Ojos noche', 'Casa de campo'],
+    titulo: 'Jóvenes eternamente',
+    artista: 'Pol 3.14',
+    opciones: ['Jóvenes eternamente', 'Un amor para la historia', 'A dónde vamos'],
     correcta: 0,
     audio: 'audio/canciones/cancion-2.mp3',
     foto: 'fotos/cancion-2.jpg',
     historia:
-      'EDITA: cuenta aquí por qué esta canción te recuerda a ella. Dónde la escucharon, qué pasó ese día, qué parte de la letra te parece que habla exactamente de ustedes.',
+      'Esta no la escogí yo: me la dedicaste tú, en una carta. Así que ya no es una canción de Pol 3.14, es tuya y punto. Cada vez que suena me acuerdo de tu letra, no de la de él.',
   },
   {
-    titulo: 'Te Amo',
-    artista: 'Franco De Vita',
-    opciones: ['Te Amo', 'Sólo importas tú', 'No basta'],
+    titulo: 'Te quiero',
+    artista: 'Ricardo Arjona',
+    opciones: ['Te quiero', 'Fuiste tú', 'El problema'],
     correcta: 0,
     audio: 'audio/canciones/cancion-3.mp3',
     foto: 'fotos/cancion-3.jpg',
     historia:
-      'EDITA: esta puede ser la más cursi de las tres. Aprovecha: dile qué frase de la canción le dirías mirándola a los ojos.',
+      'Sonó en la radio y no lo pensé dos veces: te la mandé por WhatsApp ahí mismo. A veces mandar una canción es más fácil que decir la frase, y yo ese día tomé el camino fácil.',
+  },
+  {
+    titulo: 'Azul',
+    artista: 'Cristian Castro',
+    opciones: ['Azul', 'Por amarte así', 'Lloviendo estrellas'],
+    correcta: 0,
+    audio: 'audio/canciones/cancion-4.mp3',
+    foto: 'fotos/cancion-4.jpg',
+    historia:
+      'Esta es LA nuestra y tú lo sabes. Te gusta el azul, y un día hablando de lo que viene le pusimos nombre a alguien que todavía no existe: Azul. Así que esta canción ya no habla solo de nosotros dos.',
+  },
+  {
+    titulo: 'Un amor para la historia',
+    artista: 'Gilberto Santa Rosa',
+    opciones: ['Un amor para la historia', 'Conciencia', 'Vivir sin ella'],
+    correcta: 0,
+    audio: 'audio/canciones/cancion-5.mp3',
+    foto: 'fotos/cancion-5.jpg',
+    historia:
+      'Esta la puse porque me gusta y porque cada vez que la oigo pienso en nosotros. Con el título ya está dicho casi todo: es exactamente lo que quiero que seamos.',
   },
 ]
 
 // ─── #2 PROMESAS ─────────────────────────────────────────────
+// Cada promesa se parte en dos tarjetas: el texto y su emoji. Por eso los
+// emojis tienen que ser bien distintos entre sí, para que se puedan emparejar.
 const promesas = [
-  { emoji: '💕', promesa: 'Estar contigo también los días grises' },
-  { emoji: '👂', promesa: 'Escucharte de verdad, no solo esperar mi turno' },
-  { emoji: '🤝', promesa: 'Elegirte otra vez cada mañana' },
-  { emoji: '🌱', promesa: 'Crecer contigo, nunca a costa de ti' },
+  { emoji: '🥇', promesa: 'Tratarte como mi prioridad en cada ocasión' },
+  { emoji: '🧭', promesa: 'Liderar la relación y los planes que vienen' },
+  { emoji: '💕', promesa: 'Amarte como tú quieres y tratarte con cariño siempre' },
+  { emoji: '⏳', promesa: 'Ser paciente y nunca perder mis cosas buenas' },
 ]
 
 // ─── #3 TIMELINE ─────────────────────────────────────────────
@@ -239,7 +274,7 @@ export const MINIJUEGOS = [
   { id: 3, titulo: 'Pasado',         emoji: '📸', tipo: 'timeline',  gradiente: 'from-[#f093fb] to-[#f5576c]', intro: 'Nuestro camino, desde el primer día.',                        contenido: momentos },
   { id: 4, titulo: 'Presente',       emoji: '❤️', tipo: 'sopa',      gradiente: 'from-[#fa709a] to-[#fee140]', intro: 'Ocho palabras escondidas. Todas hablan de ti.',               contenido: palabrasSopa },
   { id: 5, titulo: 'Futuro',         emoji: '🌟', tipo: 'revelar',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Toca cada cosita para ver lo que quiero contigo.',            contenido: suenos },
-  { id: 6, titulo: 'Noche Especial', emoji: '🌙', tipo: 'sorpresas', gradiente: 'from-[#f093fb] to-[#fee140]', intro: 'Cinco sorpresas para hoy. Ábrelas en el orden que quieras.',  contenido: sorpresas },
+  { id: 6, titulo: 'Noche Especial', emoji: '🌙', tipo: 'sorpresas', gradiente: 'from-[#f093fb] to-[#fee140]', intro: `Cinco sorpresas para ${NOCHE_ESPECIAL}. Ábrelas en el orden que quieras.`, contenido: sorpresas },
   { id: 7, titulo: '9 Razones',      emoji: '💕', tipo: 'puzzle',    gradiente: 'from-[#fa709a] to-[#fee140]', intro: 'Arma el rompecabezas y aparecen mis nueve razones.',          contenido: razones },
   { id: 8, titulo: 'Momentos',       emoji: '😄', tipo: 'adivina',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Fotos borrosas. Adivina con el menor desenfoque posible.',    contenido: adivinanzas },
   { id: 9, titulo: 'Confesiones',    emoji: '🤐', tipo: 'diario',    gradiente: 'from-[#764ba2] to-[#fa709a]', intro: 'Seis cosas que te he querido decir.',                         contenido: confesiones },
