@@ -436,15 +436,15 @@ export const FINAL = {
  * ════════════════════════════════════════════════════════════
  */
 export const MINIJUEGOS = [
-  { id: 1, titulo: 'Canciones',      emoji: '🎵', tipo: 'quiz',      gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Tres canciones que son nuestras. ¿Las reconoces?',            contenido: canciones },
-  { id: 2, titulo: 'Promesas',       emoji: '✨', tipo: 'memoria',   gradiente: 'from-[#f093fb] to-[#f5576c]', intro: 'Encuentra los pares y encontrarás mis promesas.',             contenido: promesas },
-  { id: 3, titulo: 'Pasado',         emoji: '📸', tipo: 'timeline',  gradiente: 'from-[#f093fb] to-[#f5576c]', intro: 'Nuestro camino, desde el primer día.',                        contenido: momentos },
-  { id: 4, titulo: 'Presente',       emoji: '❤️', tipo: 'sopa',      gradiente: 'from-[#fa709a] to-[#fee140]', intro: 'Ocho palabras escondidas. Todas hablan de ti.',               contenido: palabrasSopa },
-  { id: 5, titulo: 'Futuro',         emoji: '🌟', tipo: 'revelar',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Toca cada cosita para ver lo que quiero contigo.',            contenido: suenos },
-  { id: 6, titulo: 'Noche Especial', emoji: '🌙', tipo: 'sorpresas', gradiente: 'from-[#f093fb] to-[#fee140]', intro: `${sorpresas.length} sorpresas para ${NOCHE_ESPECIAL}. Ábrelas en el orden que quieras.`, contenido: sorpresas },
-  { id: 7, titulo: '9 Razones',      emoji: '💕', tipo: 'puzzle',    gradiente: 'from-[#fa709a] to-[#fee140]', intro: 'Arma el rompecabezas y aparecen mis nueve razones.',          contenido: razones },
-  { id: 8, titulo: 'Momentos',       emoji: '😄', tipo: 'adivina',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Fotos borrosas. Adivina con el menor desenfoque posible.',    contenido: adivinanzas },
-  { id: 9, titulo: 'El poema',       emoji: '📜', tipo: 'poema',     gradiente: 'from-[#764ba2] to-[#fa709a]', intro: 'Le faltan nueve palabras: una por cada sobre. Ponlas y se arma solo.', contenido: poema },
+  { id: 1, titulo: 'Canciones',      emoji: '🎵', tipo: 'quiz',      gradiente: 'from-[#667eea] to-[#764ba2]', intro: `${canciones.length} canciones que son nuestras. Vas a tener que adivinarlas.`, contenido: canciones },
+  { id: 2, titulo: 'Promesas',       emoji: '✨', tipo: 'memoria',   gradiente: 'from-[#f093fb] to-[#f5576c]', intro: 'Dale la vuelta a las tarjetas hasta encontrar lo que te prometo. Son cuatro, y las escribí en serio.', contenido: promesas },
+  { id: 3, titulo: 'Pasado',         emoji: '📸', tipo: 'timeline',  gradiente: 'from-[#f093fb] to-[#f5576c]', intro: 'Nuestro camino entero, desde el día en que volvimos a aparecer hasta hoy. Llévalo despacio.', contenido: momentos },
+  { id: 4, titulo: 'Presente',       emoji: '❤️', tipo: 'sopa',      gradiente: 'from-[#fa709a] to-[#fee140]', intro: `${palabrasSopa.length} palabras escondidas y todas hablan de ti. Búscalas arrastrando el dedo. Una te hará falta más adelante.`, contenido: palabrasSopa },
+  { id: 5, titulo: 'Futuro',         emoji: '🌟', tipo: 'revelar',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Lo que todavía no ha pasado. Toca cada cosita: están las que hemos hablado mil veces y alguna que nunca te dije.', contenido: suenos },
+  { id: 6, titulo: 'Noche Especial', emoji: '🌙', tipo: 'sorpresas', gradiente: 'from-[#f093fb] to-[#fee140]', intro: `${sorpresas.length} sorpresas de lo que va a pasar ${NOCHE_ESPECIAL}. Ábrelas en el orden que quieras; dos no te las cuento del todo.`, contenido: sorpresas },
+  { id: 7, titulo: '9 Razones',      emoji: '💕', tipo: 'puzzle',    gradiente: 'from-[#fa709a] to-[#fee140]', intro: 'Nueve piezas y nueve razones. Arma el rompecabezas y van saliendo de una en una.', contenido: razones },
+  { id: 8, titulo: 'Momentos',       emoji: '😄', tipo: 'adivina',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: `${adivinanzas.length} fotos borrosas. Cuanto antes adivines, más puntos; y verlas mejor te va a costar.`, contenido: adivinanzas },
+  { id: 9, titulo: 'El poema',       emoji: '📜', tipo: 'poema',     gradiente: 'from-[#764ba2] to-[#fa709a]', intro: 'Te escribí algo. Le faltan nueve palabras, una por cada sobre, y las tienes que poner tú.', contenido: poema },
 ]
 
 export const TOTAL_JUEGOS = MINIJUEGOS.length
