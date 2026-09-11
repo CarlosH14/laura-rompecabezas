@@ -18,9 +18,9 @@ export const CLAVES = [
   { id: 4, clave: 'TEAMO',      pista: 'Lo que siento en cada momento, en dos palabras pegadas' },
   { id: 5, clave: 'JUNTOS',     pista: 'Lo que vamos a construir... ¿de qué manera?' },
   { id: 6, clave: 'ESTA_NOCHE', pista: 'Lo que va a pasar el 19, en dos palabras (con guion bajo en medio)' },
-  { id: 7, clave: 'TIAMO9',     pista: '"Te amo" en italiano + el número de razones' },
+  { id: 7, clave: 'HERMOSA',    pista: 'Lo que te digo cuando te arreglas... y también cuando no' },
   { id: 8, clave: 'RECUERDOS',  pista: 'Los instantes que más atesoro' },
-  { id: 9, clave: 'SECRETOS',   pista: 'Lo que te escribí cuando se me acabaron las formas normales de decírtelo' },
+  { id: 9, clave: 'POETA',      pista: 'Lo que no soy, pero en lo que me convertí para escribirte esto' },
 ]
 
 /** Normaliza una clave para comparar: sin espacios, sin acentos, en mayúsculas. */

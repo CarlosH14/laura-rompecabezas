@@ -41,9 +41,9 @@ Las 9 claves que vienen puestas:
 | 4 | Presente ❤️ | `TEAMO` |
 | 5 | Futuro 🌟 | `JUNTOS` |
 | 6 | Noche Especial 🌙 | `ESTA_NOCHE` |
-| 7 | 9 Razones 💕 | `TIAMO9` |
+| 7 | 9 Razones 💕 | `HERMOSA` |
 | 8 | Momentos 😄 | `RECUERDOS` |
-| 9 | El poema 📜 | `SECRETOS` |
+| 9 | El poema 📜 | `POETA` |
 
 > **Los nueve piden clave, incluido el #1.** Al escanear el QR, Laura llega al
 > grid con los nueve sobres cerrados y un botón que le dice por dónde empezar.
