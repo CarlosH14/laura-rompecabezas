@@ -92,63 +92,65 @@ const promesas = [
 ]
 
 // ─── #3 TIMELINE ─────────────────────────────────────────────
+// Van en orden cronológico: así se lee como un camino y no como una lista.
 const momentos = [
   {
-    fecha: '18 de Febrero',
-    titulo: 'Cuando nos conocimos',
+    fecha: 'Hace tres años',
+    titulo: 'El día que volvimos a aparecer',
     descripcion:
-      'EDITA: recuerdo exactamente cómo fue. Cuenta el detalle chiquito que nadie más notaría: qué tenía puesto, de qué hablaron primero, en qué momento pensaste "esta persona es distinta".',
+      'Nos conocíamos de la universidad, pero el covid nos mandó cada uno por su lado y pasaron años. Un día volvimos a hablar y quedamos en ir a clases de baile. Nos vimos en la entrada del sitio: yo llegué tarde, cómo no, y tú bajaste por mí. Visto desde aquí, todo empezó ahí.',
     foto: 'fotos/timeline-1.jpg',
   },
   {
-    fecha: 'Marzo',
-    titulo: 'La primera vez que te hice reír así',
+    fecha: 'San Valentín del año pasado',
+    titulo: 'Las flores que mandé sin saber nada',
     descripcion:
-      'EDITA: esa risa que no controla. Describe la escena completa: dónde estaban, qué dijiste, cómo se te quedó grabado.',
+      'Todavía no éramos nada y yo no tenía ni idea de cómo las ibas a tomar. Te las mandé igual. De todas las cosas que he hecho por no quedarme con las ganas, esa es de lejos la que mejor me salió.',
     foto: 'fotos/timeline-2.jpg',
   },
   {
-    fecha: 'Abril',
-    titulo: 'Nuestro primer plan de verdad',
+    fecha: '18 de enero',
+    titulo: 'El día que dejamos de ser solo amigos',
     descripcion:
-      'EDITA: el primer día entero juntos. Qué hicieron, qué salió mal y por qué eso lo hizo mejor.',
+      'Hacía un calor insoportable y comimos por primera vez en Art Burguer. Ninguno de los dos sabía que ese sitio se nos iba a quedar de por vida — y mírate ahora, defendiéndolo como si lo hubiéramos inventado nosotros.',
     foto: 'fotos/timeline-3.jpg',
   },
   {
-    fecha: 'Junio',
-    titulo: 'El día que supe que era en serio',
+    fecha: 'Nuestra primera salida',
+    titulo: 'La noche de Las Bailarinas',
     descripcion:
-      'EDITA: el momento exacto en que dejaste de tener dudas. Sé específico, eso es lo que la va a mover.',
+      'El primer plan de verdad: un día entero, sin relojes y sin tener que volver a ninguna parte. Fue también nuestra primera noche juntos. No hace falta que te cuente más, esa te la sabes igual de bien que yo.',
     foto: 'fotos/timeline-4.jpg',
   },
   {
-    fecha: 'Agosto',
-    titulo: 'Lo cotidiano contigo',
+    fecha: 'Nuestro primer viaje',
+    titulo: 'El desierto de la Tatacoa',
     descripcion:
-      'EDITA: un martes normal, sin nada especial, y aun así te acuerdas. Esos son los que más valen: cuéntalo.',
+      'Nuestro primer viaje largo juntos. Volvimos con el celular lleno de fotos y con un montón de cosas que no se pueden explicar a alguien que no estuvo ahí. Repetimos cuando digas.',
     foto: 'fotos/timeline-5.jpg',
   },
   {
     fecha: 'Hoy',
-    titulo: 'Siete meses',
+    titulo: 'Ocho meses',
     descripcion:
-      'EDITA: cierra el recorrido. Qué significa para ti llegar hasta acá con ella, y qué es lo próximo que quieres vivir juntos.',
+      'Y hasta aquí llegamos, por ahora. Han sido los meses más felices de mi vida, así, sin adornos. He aprendido un montón contigo y a tu lado me siento increíble. Si esto es solo el principio, no me quiero ni imaginar lo que falta.',
     foto: 'fotos/timeline-6.jpg',
   },
 ]
 
 // ─── #4 SOPA DE LETRAS ───────────────────────────────────────
-// EDITA: cambia las palabras por las cualidades que TÚ le dirías.
-// Reglas: MAYÚSCULAS, sin acentos, sin ñ, sin espacios, máximo 8 letras.
+// El tablero se genera solo a partir de esta lista: no hay que dibujarlo.
+// Si cambias alguna palabra: MAYÚSCULAS, sin acentos, sin ñ, sin espacios
+// y máximo 8 letras.
 const palabrasSopa = [
+  'LAURA',
+  'AZUL',
+  'AMOR',
+  'ODISEO',
+  'GAEL',
+  'PRINCESA',
+  'CIELO',
   'HERMOSA',
-  'DULCE',
-  'LINDA',
-  'FUERTE',
-  'ALEGRE',
-  'SINCERA',
-  'MAGIA',
-  'VALIENTE',
 ]
 
 // ─── #5 FUTURO ───────────────────────────────────────────────

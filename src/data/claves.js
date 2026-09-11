@@ -12,12 +12,12 @@
  * ════════════════════════════════════════════════════════════
  */
 export const CLAVES = [
-  { id: 1, clave: 'LUNA2024',   pista: 'El fragmento de la canción que más amo de ti' },
+  { id: 1, clave: 'AZUL',       pista: 'El nombre de nuestra canción... y el de alguien que todavía no existe' },
   { id: 2, clave: 'SIEMPRE',    pista: 'Lo que te prometo por... (una sola palabra)' },
-  { id: 3, clave: '18FEBRERO',  pista: 'La fecha en que nos conocimos (día + mes, sin espacios)' },
+  { id: 3, clave: '18ENERO',    pista: 'El día que dejamos de ser solo amigos (día + mes, sin espacios)' },
   { id: 4, clave: 'TEAMO',      pista: 'Lo que siento en cada momento, en dos palabras pegadas' },
   { id: 5, clave: 'JUNTOS',     pista: 'Lo que vamos a construir... ¿de qué manera?' },
-  { id: 6, clave: 'ESTA_NOCHE', pista: 'Lo que sucederá en pocas horas (con guion bajo en medio)' },
+  { id: 6, clave: 'ESTA_NOCHE', pista: 'Lo que va a pasar el 19, en dos palabras (con guion bajo en medio)' },
   { id: 7, clave: 'TIAMO9',     pista: '"Te amo" en italiano + el número de razones' },
   { id: 8, clave: 'RECUERDOS',  pista: 'Los instantes que más atesoro' },
   { id: 9, clave: 'SECRETOS',   pista: 'Lo que te he querido decir y nunca dije en voz alta' },

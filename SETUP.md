@@ -18,14 +18,14 @@ donde aparece es un texto de ejemplo esperando que lo cambies por lo tuyo.
 Abre `src/data/claves.js`:
 
 ```js
-{ id: 3, clave: '18FEBRERO', pista: 'La fecha en que nos conocimos (día + mes, sin espacios)' },
+{ id: 3, clave: '18ENERO', pista: 'El día que dejamos de ser solo amigos (día + mes, sin espacios)' },
 ```
 
 Cambia `clave` por lo que quieras y `pista` por la ayuda que verá si se atasca.
 
 **Reglas de las claves:**
 
-- No importan mayúsculas ni minúsculas: `LUNA2024` = `luna2024` = `Luna2024`.
+- No importan mayúsculas ni minúsculas: `18ENERO` = `18enero` = `18Enero`.
 - Los espacios sobran: `TE AMO` y `TEAMO` valen lo mismo.
 - Los acentos también se ignoran, pero **mejor no los uses** — escribir tildes
   en el teclado del celular es incómodo. Evita la `ñ` por lo mismo.
@@ -35,9 +35,9 @@ Las 9 claves que vienen puestas:
 
 | Sobre | Minijuego | Clave |
 | --- | --- | --- |
-| 1 | Canciones 🎵 | `LUNA2024` |
+| 1 | Canciones 🎵 | `AZUL` |
 | 2 | Promesas ✨ | `SIEMPRE` |
-| 3 | Pasado 📸 | `18FEBRERO` |
+| 3 | Pasado 📸 | `18ENERO` |
 | 4 | Presente ❤️ | `TEAMO` |
 | 5 | Futuro 🌟 | `JUNTOS` |
 | 6 | Noche Especial 🌙 | `ESTA_NOCHE` |
@@ -47,7 +47,7 @@ Las 9 claves que vienen puestas:
 
 > **Los nueve piden clave, incluido el #1.** Al escanear el QR, Laura llega al
 > grid con los nueve sobres cerrados y un botón que le dice por dónde empezar.
-> La carta del sobre #1 tiene que traer escrita su clave (`LUNA2024`) igual que
+> La carta del sobre #1 tiene que traer escrita su clave (`AZUL`) igual que
 > las demás.
 >
 > Si algún día prefieres que el primero esté abierto de entrada, abre
