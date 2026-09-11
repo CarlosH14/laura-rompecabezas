@@ -11,10 +11,16 @@
 
 const CLAVE_STORAGE = 'gameState'
 
-/** Estado inicial: el minijuego #1 arranca desbloqueado (viene con el sobre #1). */
+/**
+ * Estado inicial: TODO empieza bloqueado. Los nueve minijuegos, incluido el
+ * primero, piden la clave que viene escrita en su carta.
+ *
+ * Si algún día prefieres que el #1 esté abierto de entrada (para que al
+ * escanear el QR entre directo a jugar), pon `desbloqueados: [1]`.
+ */
 export function estadoInicial() {
   return {
-    desbloqueados: [1],
+    desbloqueados: [],
     completados: [],
     progreso: {},
     ultimaVisita: new Date().toISOString(),

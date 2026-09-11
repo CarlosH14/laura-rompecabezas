@@ -22,35 +22,63 @@ export default function Final() {
 
   return (
     <motion.main
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, scale: 0.97 }}
+      animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.4 }}
+      transition={{ duration: 0.45, ease: 'easeOut' }}
       className="mx-auto w-full max-w-3xl px-4 pt-6 pb-20"
     >
       {/* Cabecera */}
-      <div className="rounded-2xl bg-gradient-to-br from-[#764ba2] via-[#fa709a] to-[#fee140] p-7 text-center text-white shadow-xl">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ type: 'spring', stiffness: 180, damping: 20 }}
+        className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-[#764ba2] via-[#fa709a] to-[#fee140] p-7 text-center text-white shadow-xl"
+        style={{ backgroundSize: '200% 200%', animation: 'desplazar-gradiente 12s ease-in-out infinite' }}
+      >
         <motion.div
           className="text-6xl"
-          animate={{ scale: [1, 1.12, 1] }}
-          transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+          animate={{ scale: [1, 1.14, 1, 1.08, 1], rotate: [0, -6, 6, 0] }}
+          transition={{ duration: 2.6, repeat: Infinity, ease: 'easeInOut' }}
           aria-hidden="true"
         >
           💕
         </motion.div>
-        <h1 className="mt-3 text-2xl leading-snug font-semibold">{FINAL.titulo}</h1>
-        <p className="mx-auto mt-3 max-w-lg text-[14px] leading-relaxed opacity-95">{FINAL.mensaje}</p>
-        <p className="mt-4 text-[15px] font-semibold">{FINAL.firma}</p>
-      </div>
+        <motion.h1
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.25, duration: 0.6 }}
+          className="mt-3 text-2xl leading-snug font-semibold"
+        >
+          {FINAL.titulo}
+        </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.45, duration: 0.6 }}
+          className="mx-auto mt-3 max-w-lg text-[14px] leading-relaxed opacity-95"
+        >
+          {FINAL.mensaje}
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.9, duration: 0.8 }}
+          className="mt-4 text-[15px] font-semibold"
+        >
+          {FINAL.firma}
+        </motion.p>
+      </motion.div>
 
       {/* Collage */}
       <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
         {FINAL.fotos.map((foto, i) => (
           <motion.div
             key={foto + i}
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3 + i * 0.09, duration: 0.45 }}
+            initial={{ opacity: 0, scale: 0.8, rotate: i % 2 ? 5 : -5 }}
+            animate={{ opacity: 1, scale: 1, rotate: 0 }}
+            whileHover={{ scale: 1.05, rotate: i % 2 ? 1.5 : -1.5, zIndex: 2 }}
+            transition={{ delay: 0.5 + i * 0.1, type: 'spring', stiffness: 220, damping: 18 }}
             className="overflow-hidden rounded-xl shadow-md"
           >
             <Foto
@@ -77,18 +105,26 @@ export default function Final() {
           Lo que armaste
         </p>
         <div className="grid grid-cols-3 gap-2">
-          {MINIJUEGOS.map((juego) => (
-            <div
+          {MINIJUEGOS.map((juego, i) => (
+            <motion.div
               key={juego.id}
+              initial={{ opacity: 0, scale: 0.6 }}
+              animate={{ opacity: completados.includes(juego.id) ? 1 : 0.4, scale: 1 }}
+              transition={{ delay: 0.9 + i * 0.06, type: 'spring', stiffness: 300, damping: 16 }}
               className={`flex flex-col items-center gap-1 rounded-lg p-2 text-center ${
-                completados.includes(juego.id) ? 'bg-light' : 'opacity-40'
+                completados.includes(juego.id) ? 'bg-light' : ''
               }`}
             >
-              <span className="text-xl" aria-hidden="true">
+              <motion.span
+                className="text-xl"
+                animate={completados.includes(juego.id) ? { y: [0, -5, 0] } : {}}
+                transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut', delay: i * 0.25 }}
+                aria-hidden="true"
+              >
                 {juego.emoji}
-              </span>
+              </motion.span>
               <span className="text-[11px] leading-tight font-medium">{juego.titulo}</span>
-            </div>
+            </motion.div>
           ))}
         </div>
         <p className="mt-3 text-center text-[13px] text-muted">
@@ -102,7 +138,7 @@ export default function Final() {
           type="button"
           whileTap={{ scale: 0.96 }}
           onClick={volverAlInicio}
-          className="btn-base bg-gradient-to-r from-primary to-secondary font-semibold text-white shadow-lg"
+          className="btn-base btn-destello bg-gradient-to-r from-primary to-secondary font-semibold text-white shadow-lg"
         >
           🧩 Ver todo de nuevo
         </motion.button>

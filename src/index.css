@@ -35,6 +35,46 @@
   100% { box-shadow: 0 0 24px 6px rgba(255, 255, 255, 0), 0 0 0 14px rgba(76, 175, 80, 0); }
 }
 
+/* Corazones del fondo: suben de abajo arriba y se desvanecen en los extremos */
+@keyframes flotar-arriba {
+  0%   { transform: translateY(0) rotate(0deg) scale(0.9); opacity: 0; }
+  12%  { opacity: var(--op, 0.2); }
+  88%  { opacity: var(--op, 0.2); }
+  100% { transform: translateY(-112vh) rotate(28deg) scale(1.1); opacity: 0; }
+}
+
+.flotante {
+  animation-name: flotar-arriba;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform, opacity;
+}
+
+/* Gradiente de texto que se desplaza despacio */
+@keyframes desplazar-gradiente {
+  0%, 100% { background-position: 0% 50%; }
+  50%      { background-position: 100% 50%; }
+}
+
+/* Destello que cruza un elemento de lado a lado */
+@keyframes destello {
+  0%   { transform: translateX(-120%) skewX(-18deg); }
+  100% { transform: translateX(320%) skewX(-18deg); }
+}
+
+/* Latido suave, para lo que está esperando a que lo toquen */
+@keyframes latido {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.04); }
+}
+
+/* Halo que crece y se apaga */
+@keyframes halo {
+  0%   { box-shadow: 0 0 0 0 rgba(250, 112, 154, 0.5); }
+  70%  { box-shadow: 0 0 0 14px rgba(250, 112, 154, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(250, 112, 154, 0); }
+}
+
 /* ────────────────────────────────────────────────
    BASE
    ──────────────────────────────────────────────── */
@@ -109,12 +149,39 @@ button {
   border-color: var(--color-primary);
 }
 
-/* Texto con gradiente */
+/* Texto con gradiente, que además se mueve despacio */
 @utility texto-gradiente {
-  background-image: linear-gradient(135deg, #fa709a, #fee140);
+  background-image: linear-gradient(120deg, #fa709a, #fee140, #f093fb, #fa709a);
+  background-size: 300% 100%;
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  animation: desplazar-gradiente 9s ease-in-out infinite;
+}
+
+/* Botón con un destello que lo cruza cada tanto */
+@utility btn-destello {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-destello::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 35%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  animation: destello 3.2s ease-in-out infinite;
+  animation-delay: 1s;
+  pointer-events: none;
+}
+
+/* Latido: para la casilla que toca jugar ahora */
+@utility late {
+  animation: latido 2.4s ease-in-out infinite, halo 2.4s ease-in-out infinite;
 }
 
 /* Scrollbar discreta en desktop */

@@ -70,24 +70,48 @@ export default function JuegoContainer() {
   return (
     <motion.main
       key={juego.id}
-      initial={{ opacity: 0, y: 12 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
+      initial={{ opacity: 0, x: 28 }}
+      animate={{ opacity: 1, x: 0 }}
+      exit={{ opacity: 0, x: -20 }}
+      transition={{ duration: 0.32, ease: 'easeOut' }}
       className="mx-auto w-full max-w-3xl px-4 pt-4 pb-16"
     >
       {/* Cabecera del minijuego */}
-      <div className={`mb-5 rounded-2xl bg-gradient-to-br ${juego.gradiente} p-5 text-white shadow-lg`}>
+      <motion.div
+        initial={{ opacity: 0, y: -14, scale: 0.97 }}
+        animate={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{ type: 'spring', stiffness: 220, damping: 22 }}
+        className={`relative mb-5 overflow-hidden rounded-2xl bg-gradient-to-br ${juego.gradiente} p-5 text-white shadow-lg`}
+      >
+        {/* Destello de bienvenida, una sola pasada */}
+        <span
+          className="pointer-events-none absolute inset-y-0 -left-1/3 w-1/3 bg-gradient-to-r from-transparent via-white/25 to-transparent [animation:destello_1.6s_ease-out_1]"
+          aria-hidden="true"
+        />
         <p className="text-[11px] font-medium tracking-wider uppercase opacity-80">Sobre #{juego.id}</p>
         <h1 className="mt-0.5 flex items-center gap-2 text-2xl font-semibold">
-          <span aria-hidden="true">{juego.emoji}</span> {juego.titulo}
+          <motion.span
+            initial={{ scale: 0, rotate: -120 }}
+            animate={{ scale: 1, rotate: 0 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 13, delay: 0.1 }}
+            aria-hidden="true"
+          >
+            {juego.emoji}
+          </motion.span>{' '}
+          {juego.titulo}
         </h1>
         <p className="mt-1 text-[13px] leading-relaxed opacity-95">{juego.intro}</p>
-      </div>
+      </motion.div>
 
       {/* El minijuego */}
       {Minijuego ? (
-        <Minijuego juego={juego} datos={juego.contenido} onCompletar={alCompletar} />
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.12, duration: 0.4 }}
+        >
+          <Minijuego juego={juego} datos={juego.contenido} onCompletar={alCompletar} />
+        </motion.div>
       ) : (
         <p className="card text-center text-muted">
           No encontré el minijuego del tipo "{juego.tipo}".
@@ -104,9 +128,18 @@ export default function JuegoContainer() {
             transition={{ duration: 0.4 }}
             className="card mt-6 text-center"
           >
-            <p className="text-2xl" aria-hidden="true">
+            <motion.p
+              className="text-3xl"
+              initial={{ scale: 0, rotate: -30 }}
+              animate={{ scale: 1, rotate: 0, y: [0, -8, 0] }}
+              transition={{
+                scale: { type: 'spring', stiffness: 400, damping: 12 },
+                y: { duration: 1.4, repeat: Infinity, ease: 'easeInOut', delay: 0.5 },
+              }}
+              aria-hidden="true"
+            >
               🎉
-            </p>
+            </motion.p>
             <h2 className="mt-1 text-xl font-semibold">Minijuego completado</h2>
 
             {todoListo ? (
@@ -118,7 +151,7 @@ export default function JuegoContainer() {
                   type="button"
                   onClick={irAlFinal}
                   whileTap={{ scale: 0.96 }}
-                  className="btn-base mx-auto mt-4 flex bg-gradient-to-r from-[#764ba2] to-[#fa709a] font-semibold text-white shadow-lg"
+                  className="btn-base btn-destello mx-auto mt-4 flex bg-gradient-to-r from-[#764ba2] to-[#fa709a] font-semibold text-white shadow-lg"
                 >
                   💕 Abrir el final
                 </motion.button>
@@ -141,7 +174,7 @@ export default function JuegoContainer() {
                       onClick={() =>
                         siguienteDesbloqueado ? irAJuego(siguiente.id) : abrirModal(siguiente.id)
                       }
-                      className={`btn-base bg-gradient-to-r ${siguiente.gradiente} font-semibold text-white shadow-lg`}
+                      className={`btn-base btn-destello bg-gradient-to-r ${siguiente.gradiente} font-semibold text-white shadow-lg`}
                     >
                       {siguienteDesbloqueado
                         ? `${siguiente.emoji} Ir a ${siguiente.titulo}`

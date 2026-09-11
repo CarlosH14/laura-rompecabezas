@@ -5,6 +5,7 @@ import Home from './components/Home'
 import JuegoContainer from './components/JuegoContainer'
 import Final from './components/Final'
 import DesbloqueoModal from './components/DesbloqueoModal'
+import FondoAnimado from './components/FondoAnimado'
 
 /**
  * Una sola pantalla, tres vistas. El estado manda: no hay rutas ni URLs
@@ -15,9 +16,12 @@ export default function App() {
   const pantalla = useGameStore((s) => s.pantalla)
 
   return (
-    <div className="min-h-dvh">
+    <div className="relative min-h-dvh">
+      <FondoAnimado />
       <Navbar />
 
+      {/* mode="wait": una pantalla termina de salir antes de que entre la otra,
+          para que no se solapen a mitad de camino. */}
       <AnimatePresence mode="wait">
         {pantalla === 'home' && <Home key="home" />}
         {pantalla === 'juego' && <JuegoContainer key="juego" />}

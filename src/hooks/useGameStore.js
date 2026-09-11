@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { validarClave } from '../data/claves'
 import { TOTAL_JUEGOS } from '../data/minijuegos'
-import { borrarEstado, cargarEstado, guardarEstado } from '../utils/storage'
+import { borrarEstado, cargarEstado, estadoInicial, guardarEstado } from '../utils/storage'
 
 const inicial = cargarEstado()
 
@@ -36,11 +36,14 @@ export const useGameStore = create((set, get) => ({
       return false
     }
 
+    // No cerramos el modal aquí: el propio modal se queda un momento más para
+    // enseñar el candado abriéndose, y se cierra solo al entrar al minijuego.
     set((s) => {
-      const desbloqueados = s.desbloqueados.includes(id) ? s.desbloqueados : [...s.desbloqueados, id].sort((a, b) => a - b)
-      const siguiente = { ...s, desbloqueados, modalAbierto: null }
-      guardarEstado(siguiente)
-      return { desbloqueados, modalAbierto: null }
+      const desbloqueados = s.desbloqueados.includes(id)
+        ? s.desbloqueados
+        : [...s.desbloqueados, id].sort((a, b) => a - b)
+      guardarEstado({ ...s, desbloqueados })
+      return { desbloqueados }
     })
 
     get().registrarIntento(id, true)
@@ -97,10 +100,11 @@ export const useGameStore = create((set, get) => ({
   /** Borra todo el progreso. Útil para probar, y para que Laura repita. */
   reiniciarTodo: () => {
     borrarEstado()
+    const limpio = estadoInicial()
     set({
-      desbloqueados: [1],
-      completados: [],
-      progreso: {},
+      desbloqueados: limpio.desbloqueados,
+      completados: limpio.completados,
+      progreso: limpio.progreso,
       pantalla: 'home',
       juegoActual: null,
       modalAbierto: null,

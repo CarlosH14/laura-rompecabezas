@@ -45,9 +45,13 @@ Las 9 claves que vienen puestas:
 | 8 | Momentos 😄 | `RECUERDOS` |
 | 9 | Confesiones 🤐 | `SECRETOS` |
 
-> El minijuego **#1 ya viene desbloqueado**. La carta del sobre #1 no necesita
-> clave: solo el QR. Si prefieres que también pida clave, abre
-> `src/utils/storage.js` y cambia `desbloqueados: [1]` por `desbloqueados: []`.
+> **Los nueve piden clave, incluido el #1.** Al escanear el QR, Laura llega al
+> grid con los nueve sobres cerrados y un botón que le dice por dónde empezar.
+> La carta del sobre #1 tiene que traer escrita su clave (`LUNA2024`) igual que
+> las demás.
+>
+> Si algún día prefieres que el primero esté abierto de entrada, abre
+> `src/utils/storage.js` y cambia `desbloqueados: []` por `desbloqueados: [1]`.
 
 ---
 
