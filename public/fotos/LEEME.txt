@@ -1,52 +1,69 @@
 PON AQUÍ LAS FOTOS
 ==================
 
+Carpeta:  public/fotos/
+Formato:  .jpg  (si usas .png o .webp, cambia también la extensión en
+          src/data/minijuegos.js)
+
 Los nombres tienen que coincidir EXACTAMENTE con los de src/data/minijuegos.js.
-Mientras un archivo no exista, la app muestra un placeholder con gradiente que
-dice qué foto falta. No se rompe nada, así que puedes ir poniéndolas de a poco.
+Mientras un archivo no exista, la app muestra un cuadro de color que dice qué
+foto falta. No se rompe nada, así que puedes ir poniéndolas de a poco.
 
-Lista completa (22 fotos):
 
-  Minijuego #1 — Canciones
-    cancion-1.jpg   ->  A donde vamos (Morat)
-    cancion-2.jpg   ->  Jovenes eternamente (Pol 3.14)
-    cancion-3.jpg   ->  Te quiero (Ricardo Arjona)
-    cancion-4.jpg   ->  Azul (Cristian Castro)
-    cancion-5.jpg   ->  Un amor para la historia (Gilberto Santa Rosa)
+LISTA COMPLETA (22 fotos)
+=========================
 
-  Minijuego #3 — Pasado (línea de tiempo)
-    timeline-1.jpg
-    timeline-2.jpg
-    timeline-3.jpg
-    timeline-4.jpg
-    timeline-5.jpg
-    timeline-6.jpg
+MINIJUEGO #1 — Canciones  (sale de fondo mientras suena cada canción)
+---------------------------------------------------------------------
+  cancion-1.jpg   ->  A donde vamos (Morat) — las clases de ingles
+  cancion-2.jpg   ->  Jovenes eternamente (Pol 3.14) — la carta que te dedico
+  cancion-3.jpg   ->  Te quiero (Ricardo Arjona)
+  cancion-4.jpg   ->  Azul (Cristian Castro) — la de ustedes
+  cancion-5.jpg   ->  Un amor para la historia (Gilberto Santa Rosa)
 
-  Minijuego #8 — Momentos (las que salen borrosas)
-    adivina-1.jpg
-    adivina-2.jpg
-    adivina-3.jpg
-    adivina-4.jpg
-    adivina-5.jpg
 
-  Pantalla final — collage
-    final-1.jpg
-    final-2.jpg
-    final-3.jpg
-    final-4.jpg
-    final-5.jpg
-    final-6.jpg
+MINIJUEGO #3 — Pasado  (la linea de tiempo, en este orden)
+----------------------------------------------------------
+  timeline-1.jpg  ->  El reencuentro, las clases de baile
+  timeline-2.jpg  ->  Las flores de San Valentin del ano pasado
+  timeline-3.jpg  ->  18 de enero, Art Burguer
+  timeline-4.jpg  ->  La noche de Las Bailarinas
+  timeline-5.jpg  ->  El desierto de la Tatacoa
+  timeline-6.jpg  ->  Ustedes hoy, los ocho meses
 
-  (final-1.jpg se usa también como premio del minijuego #7)
+
+MINIJUEGO #8 — Momentos  (salen BORROSAS y se van aclarando)
+-------------------------------------------------------------
+  adivina-1.jpg   ->  El desierto de la Tatacoa   (pregunta: en que mes fuimos)
+  adivina-2.jpg   ->  Las Bailarinas, el tobogan  (pregunta: cuantas veces te tiraste)
+  adivina-3.jpg   ->  Villa Italia                (pregunta: tu plato favorito)
+  adivina-4.jpg   ->  Tu primera presentacion     (pregunta: cuantos carteles me gane)
+  adivina-5.jpg   ->  El ramo de girasoles        (pregunta: cuantos girasoles tenia)
+
+  IMPORTANTE: estas cinco tienen que dejar ADIVINAR la respuesta cuando se
+  ven nitidas. Si la pregunta es cuantos girasoles, que se vean los girasoles.
+
+
+PANTALLA FINAL — el collage
+---------------------------
+  final-1.jpg     ->  la mejor de todas (sale tambien como premio del minijuego #7)
+  final-2.jpg
+  final-3.jpg
+  final-4.jpg
+  final-5.jpg
+  final-6.jpg
+
+  Estas salen en CUADRADO. Si quieres controlar que parte se ve, recortalas
+  cuadradas tu antes de subirlas.
 
 
 CONSEJOS
---------
-· Formato: .jpg funciona en todos lados. Si usas .png o .webp, cambia también
-  la extensión en src/data/minijuegos.js.
-· Tamaño: bájalas a 1200px de ancho como máximo. Una foto de 4 MB recién
-  salida del celular tarda en cargar con datos móviles; a 1200px pesa ~200 KB
-  y se ve igual de bien en un teléfono.
-· Las del collage final salen en cuadrado, así que recórtalas cuadradas si
-  quieres controlar qué parte se ve.
-· Nada de espacios ni acentos ni ñ en los nombres de archivo.
+========
+· Bajales el peso: maximo 1200px de ancho. Una foto recien salida del celular
+  pesa 4 MB y tarda un monton con datos moviles; a 1200px pesa ~200 KB y se ve
+  exactamente igual en un telefono.
+· Nada de espacios, acentos ni ñ en los nombres de archivo.
+· Respeta mayusculas y minusculas: en GitHub, Foto-1.JPG y foto-1.jpg NO son
+  el mismo archivo (en Windows si, y por eso funciona en tu maquina y falla al
+  publicarlo).
+· Cuando las tengas puestas:  git add .  ->  git commit -m "fotos"  ->  git push

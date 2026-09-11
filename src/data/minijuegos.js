@@ -233,54 +233,90 @@ const sorpresas = [
 //   0 1 2
 //   3 4 5
 //   6 7 8
+// Tienen que ser NUEVE exactas: es un tablero 3x3 y con menos no se puede
+// terminar. Van saliendo de una en una según encaja cada pieza, así que
+// cuanto más cortas, mejor se leen.
 const razones = [
-  { posicion: 0, emoji: '😊', razon: 'EDITA: tu sonrisa. Me arregla el día entero y ni te enteras.' },
-  { posicion: 1, emoji: '🧠', razon: 'EDITA: cómo piensas. Me haces ver cosas que solo no vería.' },
-  { posicion: 2, emoji: '🤗', razon: 'EDITA: tus abrazos. Ahí se me apaga el ruido.' },
-  { posicion: 3, emoji: '😂', razon: 'EDITA: tu risa cuando algo te da mucha risa. Es lo mejor que existe.' },
-  { posicion: 4, emoji: '💪', razon: 'EDITA: lo fuerte que eres, incluso cuando crees que no lo estás siendo.' },
-  { posicion: 5, emoji: '🫶', razon: 'EDITA: cómo cuidas a la gente que quieres, sin que nadie te lo pida.' },
-  { posicion: 6, emoji: '🎯', razon: 'EDITA: tus ganas. Lo que quieres, lo persigues.' },
-  { posicion: 7, emoji: '🕊️', razon: 'EDITA: la paz que me das. Contigo no tengo que actuar de nada.' },
-  { posicion: 8, emoji: '❤️', razon: 'EDITA: y la novena es simple: eres tú. No necesito más razón que esa.' },
+  {
+    posicion: 0, emoji: '🔥',
+    razon: 'Que lo sientes todo al máximo: la alegría, la rabia, el cariño. Nada a medias. Me encanta que seas así.',
+  },
+  {
+    posicion: 1, emoji: '🫂',
+    razon: 'Cómo me haces sentir amado. No es un piropo, es un hecho: nunca me había sentido así de querido.',
+  },
+  {
+    posicion: 2, emoji: '👁️',
+    razon: 'Tus ojos. Llevo meses buscando una forma original de decirlo y no me sale ninguna: me encantan y ya.',
+  },
+  {
+    posicion: 3, emoji: '😂',
+    razon: 'Que te pedí que me pasaras los pañitos húmedos y entendiste "malditos hombres". Me sigo riendo. No pienso dejar de contarlo nunca.',
+  },
+  {
+    posicion: 4, emoji: '🤲',
+    razon: 'Que me enseñaste a querer con las manos: abrazar, tocar, quedarme cerca. Eso yo no lo sabía hacer antes de ti.',
+  },
+  {
+    posicion: 5, emoji: '👑',
+    razon: 'Lo mimada que eres. Y lo bien que se me da consentirte, que en el fondo también es mérito tuyo.',
+  },
+  // Estas tres las escribí yo con cosas que me contaste. EDITA: cámbialas por
+  // las tuyas si no suenan a ti.
+  {
+    posicion: 6, emoji: '🚪',
+    razon: 'Que aquel día llegué tarde a las clases de baile y tú bajaste por mí. Ahí, sin saberlo todavía, ya me habías dicho que sí.',
+  },
+  {
+    posicion: 7, emoji: '✉️',
+    razon: 'Que me dedicaste una canción en una carta. La tengo guardada, por si algún día te entra la duda.',
+  },
+  {
+    posicion: 8, emoji: '📢',
+    razon: 'Que se nos sale un gallo hablando y gritamos "¡atención!" o "¡última hora!". Tenemos un idioma entero y no lo habla nadie más.',
+  },
 ]
 
 // ─── #8 ADIVINA EL MOMENTO ───────────────────────────────────
+// La respuesta correcta va cambiando de sitio a propósito (`correcta` no es
+// siempre el mismo número): si no, se adivina por costumbre y no por memoria.
 const adivinanzas = [
   {
     foto: 'fotos/adivina-1.jpg',
-    pregunta: '¿Cuándo fue este momento?',
-    respuestas: ['El primer mes', 'El tercer mes', 'El sexto mes'],
+    pregunta: '¿En qué mes fuimos al desierto de la Tatacoa?',
+    respuestas: ['Julio', 'Mayo', 'Octubre'],
     correcta: 0,
-    historia: 'EDITA: recuerdo ese día porque... (cuenta qué pasó justo antes o justo después de la foto).',
+    historia:
+      'Julio. Nuestro primer viaje largo juntos, y el primero de una lista que pienso hacer bien larga.',
   },
   {
     foto: 'fotos/adivina-2.jpg',
-    pregunta: '¿Dónde estábamos aquí?',
-    respuestas: ['EDITA lugar A', 'EDITA lugar B', 'EDITA lugar C'],
+    pregunta: 'En Las Bailarinas, ¿cuántas veces te tiraste del tobogán?',
+    respuestas: ['Una', 'Dos', 'Tres'],
     correcta: 1,
-    historia: 'EDITA: la historia detrás de esta foto.',
+    historia: 'Dos. Y me acuerdo del número porque me quedé mirando las dos.',
   },
   {
     foto: 'fotos/adivina-3.jpg',
-    pregunta: '¿Qué estábamos celebrando?',
-    respuestas: ['EDITA opción A', 'EDITA opción B', 'EDITA opción C'],
+    pregunta: 'En Villa Italia, ¿cuál es tu plato favorito?',
+    respuestas: ['Lasaña', 'Risotto', 'Pollo parmigiana'],
     correcta: 2,
-    historia: 'EDITA: la historia detrás de esta foto.',
+    historia:
+      'Pollo parmigiana, siempre. A estas alturas ya no me hace falta ni mirar la carta para saber qué vas a pedir.',
   },
   {
     foto: 'fotos/adivina-4.jpg',
-    pregunta: '¿Quién tomó esta foto?',
-    respuestas: ['Tú', 'Yo', 'Alguien más'],
-    correcta: 1,
-    historia: 'EDITA: la historia detrás de esta foto.',
+    pregunta: 'En tu primera presentación, ¿cuántos carteles me gané?',
+    respuestas: ['Dos', 'Uno', 'Tres'],
+    correcta: 0,
+    historia: 'Dos carteles. Aunque lo mejor de ese día no fueron los carteles, fue verte ahí arriba.',
   },
   {
     foto: 'fotos/adivina-5.jpg',
-    pregunta: '¿Qué día fue este?',
-    respuestas: ['EDITA opción A', 'EDITA opción B', 'EDITA opción C'],
-    correcta: 0,
-    historia: 'EDITA: la historia detrás de esta foto. Guarda la mejor para el final.',
+    pregunta: '¿Cuántos girasoles tenía el último ramo que te mandé?',
+    respuestas: ['Tres', 'Dos', 'Cinco'],
+    correcta: 1,
+    historia: 'Dos girasoles. Pequeño detalle que seguro tú tenías contado mejor que yo.',
   },
 ]
 
