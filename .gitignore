@@ -30,3 +30,6 @@ pnpm-debug.log*
 
 # Claude Code
 .claude/settings.local.json
+
+# Las cartas son privadas: el repo es publico
+Cartas-para-Laura.docx
