@@ -17,7 +17,7 @@ export const CLAVES = [
   { id: 3, clave: '18ENERO',    pista: 'El día que dejamos de ser solo amigos (día + mes, sin espacios)' },
   { id: 4, clave: 'TEAMO',      pista: 'Lo que siento en cada momento, en dos palabras pegadas' },
   { id: 5, clave: 'JUNTOS',     pista: 'Lo que vamos a construir... ¿de qué manera?' },
-  { id: 6, clave: 'ESTA_NOCHE', pista: 'Lo que va a pasar el 19, en dos palabras (con guion bajo en medio)' },
+  { id: 6, clave: 'LUNA',       pista: 'La que va a estar mirándonos desde arriba la noche del 19' },
   { id: 7, clave: 'HERMOSA',    pista: 'Lo que te digo cuando te arreglas... y también cuando no' },
   { id: 8, clave: 'RECUERDOS',  pista: 'Los instantes que más atesoro' },
   { id: 9, clave: 'POETA',      pista: 'Lo que no soy, pero en lo que me convertí para escribirte esto' },

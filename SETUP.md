@@ -40,7 +40,7 @@ Las 9 claves que vienen puestas:
 | 3 | Pasado 📸 | `18ENERO` |
 | 4 | Presente ❤️ | `TEAMO` |
 | 5 | Futuro 🌟 | `JUNTOS` |
-| 6 | Noche Especial 🌙 | `ESTA_NOCHE` |
+| 6 | Noche Especial 🌙 | `LUNA` |
 | 7 | 9 Razones 💕 | `HERMOSA` |
 | 8 | Momentos 😄 | `RECUERDOS` |
 | 9 | El poema 📜 | `POETA` |
