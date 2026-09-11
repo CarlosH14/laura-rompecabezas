@@ -1,0 +1,138 @@
+@import 'tailwindcss';
+
+/* ────────────────────────────────────────────────
+   PALETA (Tailwind v4: los tokens viven en el CSS)
+   Se usan como clases: bg-primary, text-muted, etc.
+   ──────────────────────────────────────────────── */
+@theme {
+  --color-primary: #fa709a;
+  --color-secondary: #fee140;
+  --color-success: #4caf50;
+  --color-danger: #f44336;
+  --color-dark: #333333;
+  --color-light: #f8f8f8;
+  --color-muted: #999999;
+
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --animate-flotar: flotar 6s ease-in-out infinite;
+  --animate-pulso: pulso 2s ease-in-out infinite;
+  --animate-brillo: brillo 1.2s ease-out;
+}
+
+@keyframes flotar {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-12px) rotate(6deg); }
+}
+
+@keyframes pulso {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(250, 112, 154, 0.45); }
+  50%      { box-shadow: 0 0 0 12px rgba(250, 112, 154, 0); }
+}
+
+@keyframes brillo {
+  0%   { box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.9), 0 0 0 0 rgba(76, 175, 80, 0.6); }
+  100% { box-shadow: 0 0 24px 6px rgba(255, 255, 255, 0), 0 0 0 14px rgba(76, 175, 80, 0); }
+}
+
+/* ────────────────────────────────────────────────
+   BASE
+   ──────────────────────────────────────────────── */
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--color-dark);
+  background:
+    radial-gradient(1200px 600px at 10% -10%, #ffe6ef 0%, transparent 60%),
+    radial-gradient(900px 500px at 110% 10%, #fff6d6 0%, transparent 55%),
+    var(--color-light);
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Nada de scroll horizontal accidental en móvil */
+#root {
+  overflow-x: hidden;
+}
+
+button {
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+/* ────────────────────────────────────────────────
+   COMPONENTES REUTILIZABLES
+   ──────────────────────────────────────────────── */
+@utility card {
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 0.5px solid #ddd;
+}
+
+@utility btn-base {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 44px; /* thumb-friendly */
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+@utility input-base {
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 16px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 16px; /* 16px evita el zoom automático en iOS */
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-base:focus {
+  border-color: var(--color-primary);
+}
+
+/* Texto con gradiente */
+@utility texto-gradiente {
+  background-image: linear-gradient(135deg, #fa709a, #fee140);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Scrollbar discreta en desktop */
+@media (min-width: 1024px) {
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-thumb {
+    background: #f0c0d0;
+    border-radius: 999px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+}
+
+/* Respeta a quien pidió menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

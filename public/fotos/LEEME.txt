@@ -1,0 +1,50 @@
+PON AQUÍ LAS FOTOS
+==================
+
+Los nombres tienen que coincidir EXACTAMENTE con los de src/data/minijuegos.js.
+Mientras un archivo no exista, la app muestra un placeholder con gradiente que
+dice qué foto falta. No se rompe nada, así que puedes ir poniéndolas de a poco.
+
+Lista completa (20 fotos):
+
+  Minijuego #1 — Canciones
+    cancion-1.jpg
+    cancion-2.jpg
+    cancion-3.jpg
+
+  Minijuego #3 — Pasado (línea de tiempo)
+    timeline-1.jpg
+    timeline-2.jpg
+    timeline-3.jpg
+    timeline-4.jpg
+    timeline-5.jpg
+    timeline-6.jpg
+
+  Minijuego #8 — Momentos (las que salen borrosas)
+    adivina-1.jpg
+    adivina-2.jpg
+    adivina-3.jpg
+    adivina-4.jpg
+    adivina-5.jpg
+
+  Pantalla final — collage
+    final-1.jpg
+    final-2.jpg
+    final-3.jpg
+    final-4.jpg
+    final-5.jpg
+    final-6.jpg
+
+  (final-1.jpg se usa también como premio del minijuego #7)
+
+
+CONSEJOS
+--------
+· Formato: .jpg funciona en todos lados. Si usas .png o .webp, cambia también
+  la extensión en src/data/minijuegos.js.
+· Tamaño: bájalas a 1200px de ancho como máximo. Una foto de 4 MB recién
+  salida del celular tarda en cargar con datos móviles; a 1200px pesa ~200 KB
+  y se ve igual de bien en un teléfono.
+· Las del collage final salen en cuadrado, así que recórtalas cuadradas si
+  quieres controlar qué parte se ve.
+· Nada de espacios ni acentos ni ñ en los nombres de archivo.

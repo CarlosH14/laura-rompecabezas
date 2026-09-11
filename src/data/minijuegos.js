@@ -1,0 +1,252 @@
+/**
+ * ════════════════════════════════════════════════════════════
+ *  TODO EL CONTENIDO DEL REGALO VIVE EN ESTE ARCHIVO
+ * ════════════════════════════════════════════════════════════
+ *  Los textos que ves aquí son EJEMPLOS. Están escritos para que
+ *  todo funcione de una — pero cámbialos por lo tuyo. Busca "EDITA".
+ *
+ *  FOTOS   ->  ponlas en  public/fotos/            y referencia 'fotos/nombre.jpg'
+ *  AUDIOS  ->  ponlos en  public/audio/canciones/  y referencia 'audio/canciones/x.mp3'
+ *
+ *  Si una foto todavía no existe, la app muestra un placeholder bonito
+ *  con gradiente en vez de un icono roto. No se rompe nada.
+ * ════════════════════════════════════════════════════════════
+ */
+
+// ─── #1 CANCIONES ────────────────────────────────────────────
+const canciones = [
+  {
+    titulo: 'Luna',
+    artista: 'Feid',
+    // EDITA: la opción correcta es la que apunta `correcta` (0 = la primera)
+    opciones: ['Luna', 'Ella baila sola', 'Un x100to'],
+    correcta: 0,
+    audio: 'audio/canciones/luna.mp3',
+    foto: 'fotos/cancion-1.jpg',
+    historia:
+      'Esta es "nuestra" canción y creo que tú lo sabes. La escuché mil veces antes de conocerte y no significaba nada; ahora no puedo oír los primeros segundos sin acordarme de ti riéndote de mí porque me sé mal la letra.',
+  },
+  {
+    titulo: 'Sonríe',
+    artista: 'Elsa y Elmar',
+    opciones: ['Sonríe', 'Ojos noche', 'Casa de campo'],
+    correcta: 0,
+    audio: 'audio/canciones/cancion-2.mp3',
+    foto: 'fotos/cancion-2.jpg',
+    historia:
+      'EDITA: cuenta aquí por qué esta canción te recuerda a ella. Dónde la escucharon, qué pasó ese día, qué parte de la letra te parece que habla exactamente de ustedes.',
+  },
+  {
+    titulo: 'Te Amo',
+    artista: 'Franco De Vita',
+    opciones: ['Te Amo', 'Sólo importas tú', 'No basta'],
+    correcta: 0,
+    audio: 'audio/canciones/cancion-3.mp3',
+    foto: 'fotos/cancion-3.jpg',
+    historia:
+      'EDITA: esta puede ser la más cursi de las tres. Aprovecha: dile qué frase de la canción le dirías mirándola a los ojos.',
+  },
+]
+
+// ─── #2 PROMESAS ─────────────────────────────────────────────
+const promesas = [
+  { emoji: '💕', promesa: 'Estar contigo también los días grises' },
+  { emoji: '👂', promesa: 'Escucharte de verdad, no solo esperar mi turno' },
+  { emoji: '🤝', promesa: 'Elegirte otra vez cada mañana' },
+  { emoji: '🌱', promesa: 'Crecer contigo, nunca a costa de ti' },
+]
+
+// ─── #3 TIMELINE ─────────────────────────────────────────────
+const momentos = [
+  {
+    fecha: '18 de Febrero',
+    titulo: 'Cuando nos conocimos',
+    descripcion:
+      'EDITA: recuerdo exactamente cómo fue. Cuenta el detalle chiquito que nadie más notaría: qué tenía puesto, de qué hablaron primero, en qué momento pensaste "esta persona es distinta".',
+    foto: 'fotos/timeline-1.jpg',
+  },
+  {
+    fecha: 'Marzo',
+    titulo: 'La primera vez que te hice reír así',
+    descripcion:
+      'EDITA: esa risa que no controla. Describe la escena completa: dónde estaban, qué dijiste, cómo se te quedó grabado.',
+    foto: 'fotos/timeline-2.jpg',
+  },
+  {
+    fecha: 'Abril',
+    titulo: 'Nuestro primer plan de verdad',
+    descripcion:
+      'EDITA: el primer día entero juntos. Qué hicieron, qué salió mal y por qué eso lo hizo mejor.',
+    foto: 'fotos/timeline-3.jpg',
+  },
+  {
+    fecha: 'Junio',
+    titulo: 'El día que supe que era en serio',
+    descripcion:
+      'EDITA: el momento exacto en que dejaste de tener dudas. Sé específico, eso es lo que la va a mover.',
+    foto: 'fotos/timeline-4.jpg',
+  },
+  {
+    fecha: 'Agosto',
+    titulo: 'Lo cotidiano contigo',
+    descripcion:
+      'EDITA: un martes normal, sin nada especial, y aun así te acuerdas. Esos son los que más valen: cuéntalo.',
+    foto: 'fotos/timeline-5.jpg',
+  },
+  {
+    fecha: 'Hoy',
+    titulo: 'Siete meses',
+    descripcion:
+      'EDITA: cierra el recorrido. Qué significa para ti llegar hasta acá con ella, y qué es lo próximo que quieres vivir juntos.',
+    foto: 'fotos/timeline-6.jpg',
+  },
+]
+
+// ─── #4 SOPA DE LETRAS ───────────────────────────────────────
+// EDITA: cambia las palabras por las cualidades que TÚ le dirías.
+// Reglas: MAYÚSCULAS, sin acentos, sin ñ, sin espacios, máximo 8 letras.
+const palabrasSopa = [
+  'HERMOSA',
+  'DULCE',
+  'LINDA',
+  'FUERTE',
+  'ALEGRE',
+  'SINCERA',
+  'MAGIA',
+  'VALIENTE',
+]
+
+// ─── #5 FUTURO ───────────────────────────────────────────────
+// x / y van en PORCENTAJE del lienzo (0-100) para que se vea bien
+// igual en un móvil de 375px y en un monitor grande.
+const suenos = [
+  { x: 20, y: 20, emoji: '✈️', titulo: 'Viajes',   sueno: 'EDITA: el primer lugar al que quiero llevarte, y por qué justo ese.' },
+  { x: 72, y: 17, emoji: '🏡', titulo: 'Una casa', sueno: 'EDITA: cómo te imaginas el lugar donde vivan. La cocina, la ventana, el desorden.' },
+  { x: 14, y: 58, emoji: '🐶', titulo: 'Un perro', sueno: 'EDITA: hasta el nombre. Ponle nombre, en serio.' },
+  { x: 48, y: 42, emoji: '☕', titulo: 'Mañanas',  sueno: 'EDITA: los domingos sin alarma, sin apuro, sin nadie más.' },
+  { x: 80, y: 60, emoji: '💃', titulo: 'Baile',    sueno: 'EDITA: esa fiesta, esa canción, ustedes dos y nadie mirando.' },
+  { x: 44, y: 80, emoji: '💫', titulo: 'Lo demás', sueno: 'EDITA: lo que todavía no sabemos, y que igual quiero descubrir contigo.' },
+]
+
+// ─── #6 CUENTA REGRESIVA ─────────────────────────────────────
+const sorpresas = [
+  { numero: 1, titulo: 'Sorpresa #1', emoji: '🎁', contenido: 'EDITA: hay un regalo que todavía no has visto. Está más cerca de lo que crees.', gradiente: 'from-[#f093fb] to-[#f5576c]' },
+  { numero: 2, titulo: 'Sorpresa #2', emoji: '🍽️', contenido: 'EDITA: vamos a comer en un lugar que elegí pensando en ti.',                      gradiente: 'from-[#fa709a] to-[#fee140]' },
+  { numero: 3, titulo: 'Sorpresa #3', emoji: '🎶', contenido: 'EDITA: preparé una playlist. Vas a reconocer la primera canción.',                gradiente: 'from-[#667eea] to-[#764ba2]' },
+  { numero: 4, titulo: 'Sorpresa #4', emoji: '📷', contenido: 'EDITA: quiero una foto nueva contigo hoy. La primera de las que siguen.',          gradiente: 'from-[#4facfe] to-[#00c9c8]' },
+  { numero: 5, titulo: 'Sorpresa #5', emoji: '💌', contenido: 'EDITA: y me queda una cosa por decirte, pero esa te la digo de frente.',           gradiente: 'from-[#764ba2] to-[#fa709a]' },
+]
+
+// ─── #7 NUEVE RAZONES ────────────────────────────────────────
+// `posicion` es el hueco del tablero 3x3 al que pertenece la pieza:
+//   0 1 2
+//   3 4 5
+//   6 7 8
+const razones = [
+  { posicion: 0, emoji: '😊', razon: 'EDITA: tu sonrisa. Me arregla el día entero y ni te enteras.' },
+  { posicion: 1, emoji: '🧠', razon: 'EDITA: cómo piensas. Me haces ver cosas que solo no vería.' },
+  { posicion: 2, emoji: '🤗', razon: 'EDITA: tus abrazos. Ahí se me apaga el ruido.' },
+  { posicion: 3, emoji: '😂', razon: 'EDITA: tu risa cuando algo te da mucha risa. Es lo mejor que existe.' },
+  { posicion: 4, emoji: '💪', razon: 'EDITA: lo fuerte que eres, incluso cuando crees que no lo estás siendo.' },
+  { posicion: 5, emoji: '🫶', razon: 'EDITA: cómo cuidas a la gente que quieres, sin que nadie te lo pida.' },
+  { posicion: 6, emoji: '🎯', razon: 'EDITA: tus ganas. Lo que quieres, lo persigues.' },
+  { posicion: 7, emoji: '🕊️', razon: 'EDITA: la paz que me das. Contigo no tengo que actuar de nada.' },
+  { posicion: 8, emoji: '❤️', razon: 'EDITA: y la novena es simple: eres tú. No necesito más razón que esa.' },
+]
+
+// ─── #8 ADIVINA EL MOMENTO ───────────────────────────────────
+const adivinanzas = [
+  {
+    foto: 'fotos/adivina-1.jpg',
+    pregunta: '¿Cuándo fue este momento?',
+    respuestas: ['El primer mes', 'El tercer mes', 'El sexto mes'],
+    correcta: 0,
+    historia: 'EDITA: recuerdo ese día porque... (cuenta qué pasó justo antes o justo después de la foto).',
+  },
+  {
+    foto: 'fotos/adivina-2.jpg',
+    pregunta: '¿Dónde estábamos aquí?',
+    respuestas: ['EDITA lugar A', 'EDITA lugar B', 'EDITA lugar C'],
+    correcta: 1,
+    historia: 'EDITA: la historia detrás de esta foto.',
+  },
+  {
+    foto: 'fotos/adivina-3.jpg',
+    pregunta: '¿Qué estábamos celebrando?',
+    respuestas: ['EDITA opción A', 'EDITA opción B', 'EDITA opción C'],
+    correcta: 2,
+    historia: 'EDITA: la historia detrás de esta foto.',
+  },
+  {
+    foto: 'fotos/adivina-4.jpg',
+    pregunta: '¿Quién tomó esta foto?',
+    respuestas: ['Tú', 'Yo', 'Alguien más'],
+    correcta: 1,
+    historia: 'EDITA: la historia detrás de esta foto.',
+  },
+  {
+    foto: 'fotos/adivina-5.jpg',
+    pregunta: '¿Qué día fue este?',
+    respuestas: ['EDITA opción A', 'EDITA opción B', 'EDITA opción C'],
+    correcta: 0,
+    historia: 'EDITA: la historia detrás de esta foto. Guarda la mejor para el final.',
+  },
+]
+
+// ─── #9 CONFESIONES ──────────────────────────────────────────
+const confesiones = [
+  { numero: 1, emoji: '💭', titulo: 'Confesión #1', texto: 'EDITA: la primera vez que te vi supe que eras diferente, pero me lo callé porque no quería asustarte.' },
+  { numero: 2, emoji: '😅', titulo: 'Confesión #2', texto: 'EDITA: algo tonto que hiciste por ella y nunca le contaste. Ensayar un mensaje, cambiarte de camisa tres veces, dar la vuelta a la manzana para llegar "casual".' },
+  { numero: 3, emoji: '🥺', titulo: 'Confesión #3', texto: 'EDITA: un miedo que tuviste al principio y que ella, sin saberlo, te quitó.' },
+  { numero: 4, emoji: '🌙', titulo: 'Confesión #4', texto: 'EDITA: algo que piensas de ella cuando no está.' },
+  { numero: 5, emoji: '🔒', titulo: 'Confesión #5', texto: 'EDITA: lo que nunca le has dicho en voz alta porque te da pena decirlo así, de frente.' },
+  {
+    numero: 6,
+    emoji: '❤️',
+    titulo: 'La última',
+    especial: true,
+    texto:
+      'EDITA: esta es la más importante, así que tómate tu tiempo con ella. Hazla larga si quiere ser larga. Dile lo que sientes de verdad, sin filtro y sin miedo a sonar cursi. Ella va a leer esto sola, con el celular en la mano, después de haber abierto nueve sobres. Va a valer cada palabra.',
+  },
+]
+
+// ─── PANTALLA FINAL ──────────────────────────────────────────
+export const FINAL = {
+  titulo: 'Y hasta aquí llegó el rompecabezas',
+  mensaje:
+    'EDITA: nueve sobres, nueve piezas, nueve pedazos de lo que siento por ti. Gracias por armarlas todas, una por una, con la paciencia con la que haces todo. Te amo, Laura.',
+  firma: '— Carlos',
+  // EDITA: fotos del collage final (pon las que quieras, mínimo 3)
+  fotos: [
+    'fotos/final-1.jpg',
+    'fotos/final-2.jpg',
+    'fotos/final-3.jpg',
+    'fotos/final-4.jpg',
+    'fotos/final-5.jpg',
+    'fotos/final-6.jpg',
+  ],
+}
+
+/**
+ * ════════════════════════════════════════════════════════════
+ *  ÍNDICE DE LOS 9 MINIJUEGOS
+ *  (el orden aquí = el orden del grid 3x3)
+ * ════════════════════════════════════════════════════════════
+ */
+export const MINIJUEGOS = [
+  { id: 1, titulo: 'Canciones',      emoji: '🎵', tipo: 'quiz',      gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Tres canciones que son nuestras. ¿Las reconoces?',            contenido: canciones },
+  { id: 2, titulo: 'Promesas',       emoji: '✨', tipo: 'memoria',   gradiente: 'from-[#f093fb] to-[#f5576c]', intro: 'Encuentra los pares y encontrarás mis promesas.',             contenido: promesas },
+  { id: 3, titulo: 'Pasado',         emoji: '📸', tipo: 'timeline',  gradiente: 'from-[#f093fb] to-[#f5576c]', intro: 'Nuestro camino, desde el primer día.',                        contenido: momentos },
+  { id: 4, titulo: 'Presente',       emoji: '❤️', tipo: 'sopa',      gradiente: 'from-[#fa709a] to-[#fee140]', intro: 'Ocho palabras escondidas. Todas hablan de ti.',               contenido: palabrasSopa },
+  { id: 5, titulo: 'Futuro',         emoji: '🌟', tipo: 'revelar',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Toca cada cosita para ver lo que quiero contigo.',            contenido: suenos },
+  { id: 6, titulo: 'Noche Especial', emoji: '🌙', tipo: 'sorpresas', gradiente: 'from-[#f093fb] to-[#fee140]', intro: 'Cinco sorpresas para hoy. Ábrelas en el orden que quieras.',  contenido: sorpresas },
+  { id: 7, titulo: '9 Razones',      emoji: '💕', tipo: 'puzzle',    gradiente: 'from-[#fa709a] to-[#fee140]', intro: 'Arma el rompecabezas y aparecen mis nueve razones.',          contenido: razones },
+  { id: 8, titulo: 'Momentos',       emoji: '😄', tipo: 'adivina',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Fotos borrosas. Adivina con el menor desenfoque posible.',    contenido: adivinanzas },
+  { id: 9, titulo: 'Confesiones',    emoji: '🤐', tipo: 'diario',    gradiente: 'from-[#764ba2] to-[#fa709a]', intro: 'Seis cosas que te he querido decir.',                         contenido: confesiones },
+]
+
+export const TOTAL_JUEGOS = MINIJUEGOS.length
+
+export function juegoPorId(id) {
+  return MINIJUEGOS.find((j) => j.id === id) ?? null
+}

@@ -1,0 +1,32 @@
+PON AQUÍ LOS AUDIOS
+===================
+
+Todo esto es OPCIONAL. Si un archivo no existe, la app sigue funcionando:
+los sonidos simplemente no suenan, y el botón de reproducir de las canciones
+se muestra como "Audio no disponible" (la canción se puede adivinar igual).
+
+
+CANCIONES (minijuego #1)  ->  carpeta  audio/canciones/
+------------------------------------------------------
+  luna.mp3        · fragmento de la canción #1
+  cancion-2.mp3   · fragmento de la canción #2
+  cancion-3.mp3   · fragmento de la canción #3
+
+  · 30 a 45 segundos cada uno: lo justo para reconocerla.
+  · Elige el pedazo más reconocible (el coro), no la intro.
+  · Para recortar un mp3 sin instalar nada: https://mp3cut.net
+  · Que pesen poco (1-2 MB). Laura los va a abrir con datos móviles.
+
+
+EFECTOS (opcionales)  ->  esta misma carpeta
+--------------------------------------------
+  ding.mp3     · suena al acertar algo suelto (un par, una palabra)
+  tada.mp3     · suena al completar un minijuego entero
+  unlock.mp3   · suena al desbloquear un sobre con la clave
+
+  · Cortitos (menos de 1 segundo) y de 20-50 KB.
+  · Búscalos en https://freesound.org o https://pixabay.com/sound-effects/
+  · Suenan al 30% de volumen, para que no asusten.
+
+NOTA: los navegadores de móvil bloquean el audio hasta que la persona toca
+algo en la página. Como aquí todo empieza tocando, no hay problema.
