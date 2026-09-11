@@ -1,5 +1,7 @@
 # Rompecabezas para Laura 🧩💕
 
+**Publicado en:** <https://carlosh14.github.io/laura-rompecabezas/>
+
 Un regalo en dos mitades: nueve sobres de papel y una página web.
 
 Cada sobre trae una carta, una pieza física de rompecabezas y una clave. La
