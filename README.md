@@ -22,7 +22,7 @@ sobre físico a sobre físico, hasta llegar a la pantalla final.
 | 6 | Noche Especial 🌙 | Cinco botones-sorpresa para esa noche |
 | 7 | 9 Razones 💕 | Rompecabezas 3×3; cada pieza revela una razón |
 | 8 | Momentos 😄 | Fotos borrosas: adivinar con el menor desenfoque posible da más puntos |
-| 9 | Confesiones 🤐 | Un diario de seis confesiones, la última es la grande |
+| 9 | El poema 📜 | Un poema en tres partes al que le faltan nueve palabras: una por sobre |
 
 Al completar los nueve, se abre la pantalla final con el collage y el mensaje.
 

@@ -2,8 +2,9 @@
  * ════════════════════════════════════════════════════════════
  *  TODO EL CONTENIDO DEL REGALO VIVE EN ESTE ARCHIVO
  * ════════════════════════════════════════════════════════════
- *  Los textos que ves aquí son EJEMPLOS. Están escritos para que
- *  todo funcione de una — pero cámbialos por lo tuyo. Busca "EDITA".
+ *  Los textos ya están escritos con las cosas de Carlos y Laura.
+ *  Si algo no suena a ti, cámbialo: es texto normal entre comillas.
+ *  Lo que todavía queda por decidir está marcado con "EDITA".
  *
  *  FOTOS   ->  ponlas en  public/fotos/            y referencia 'fotos/nombre.jpg'
  *  AUDIOS  ->  ponlos en  public/audio/canciones/  y referencia 'audio/canciones/x.mp3'
@@ -320,20 +321,94 @@ const adivinanzas = [
   },
 ]
 
-// ─── #9 CONFESIONES ──────────────────────────────────────────
-const confesiones = [
-  { numero: 1, emoji: '💭', titulo: 'Confesión #1', texto: 'EDITA: la primera vez que te vi supe que eras diferente, pero me lo callé porque no quería asustarte.' },
-  { numero: 2, emoji: '😅', titulo: 'Confesión #2', texto: 'EDITA: algo tonto que hiciste por ella y nunca le contaste. Ensayar un mensaje, cambiarte de camisa tres veces, dar la vuelta a la manzana para llegar "casual".' },
-  { numero: 3, emoji: '🥺', titulo: 'Confesión #3', texto: 'EDITA: un miedo que tuviste al principio y que ella, sin saberlo, te quitó.' },
-  { numero: 4, emoji: '🌙', titulo: 'Confesión #4', texto: 'EDITA: algo que piensas de ella cuando no está.' },
-  { numero: 5, emoji: '🔒', titulo: 'Confesión #5', texto: 'EDITA: lo que nunca le has dicho en voz alta porque te da pena decirlo así, de frente.' },
+/**
+ * ─── #9 EL POEMA ─────────────────────────────────────────────
+ *
+ * Un poema en tres partes al que le faltan NUEVE palabras: una por sobre.
+ * Laura las va eligiendo entre tres opciones y el poema se arma solo.
+ *
+ * CÓMO SE ESCRIBE UN VERSO
+ *   'Un verso normal'                              -> texto y ya
+ *   ''                                             -> línea en blanco (separa estrofas)
+ *   { texto: 'Con un ___ en medio',                -> verso con hueco
+ *     respuesta: 'hueco',
+ *     opciones: ['hueco', 'falsa', 'falsa'] }
+ *
+ * El '___' marca dónde va la palabra. La primera opción es la correcta, pero
+ * en pantalla salen barajadas, así que da igual el orden en que las escribas.
+ */
+const poema = [
   {
-    numero: 6,
-    emoji: '❤️',
-    titulo: 'La última',
-    especial: true,
-    texto:
-      'EDITA: esta es la más importante, así que tómate tu tiempo con ella. Hazla larga si quiere ser larga. Dile lo que sientes de verdad, sin filtro y sin miedo a sonar cursi. Ella va a leer esto sola, con el celular en la mano, después de haber abierto nueve sobres. Va a valer cada palabra.',
+    titulo: 'Azul',
+    versos: [
+      'Antes de ti yo no sabía',
+      'que un color pudiera ser un plan.',
+      '',
+      { texto: 'Que alguien dijera ___', respuesta: 'azul', opciones: ['azul', 'verde', 'blanco'] },
+      'y en esa palabra cupieran',
+      'una canción,',
+      'una casa con biblioteca,',
+      'un perro que todavía no ladra',
+      'y una niña que todavía no existe',
+      'pero que ya tiene nombre.',
+      '',
+      { texto: 'Yo llegué ___ aquel día.', respuesta: 'tarde', opciones: ['tarde', 'temprano', 'justo'] },
+      'Tú bajaste por mí.',
+      'Desde entonces llego tarde a todas partes',
+      'menos a ti.',
+      '',
+      'Y si alguna vez te preguntan',
+      'de qué color es quererme,',
+      { texto: 'diles que del ___.', respuesta: 'tuyo', opciones: ['tuyo', 'mío', 'nuestro'] },
+    ],
+  },
+  {
+    titulo: 'Inventario',
+    versos: [
+      { texto: 'Dos ___ que contaste mejor que yo.', respuesta: 'girasoles', opciones: ['girasoles', 'rosas', 'tulipanes'] },
+      { texto: 'Una mesa en ___ que ya es nuestra', respuesta: 'Art Burguer', opciones: ['Art Burguer', 'Villa Italia', 'Las Bailarinas'] },
+      'aunque nadie nos la haya dado.',
+      'Un idioma de dos palabras:',
+      { texto: 'atención, ___.', respuesta: 'última hora', opciones: ['última hora', 'buenas noches', 'otra vez'] },
+      '',
+      'Unos pañitos húmedos',
+      'que alguien entendió como una queja',
+      'contra todos los hombres del mundo,',
+      'y una risa que no se me ha quitado desde entonces.',
+      '',
+      'Un 18 de enero.',
+      'Un desierto en julio.',
+      'Una carta con una canción adentro.',
+      '',
+      'Dicen que el amor son las cosas grandes.',
+      'A mí me salió de esto:',
+      'de una lista tonta',
+      'que no cambio por nada.',
+    ],
+  },
+  {
+    titulo: 'Lo que no te he dicho',
+    versos: [
+      'No te he dicho que ensayo las frases',
+      'antes de decírtelas,',
+      'y que igual me salen mal.',
+      '',
+      'No te he dicho que cuando no estás',
+      { texto: 'te pienso en ___,', respuesta: 'presente', opciones: ['presente', 'silencio', 'secreto'] },
+      'como si estuvieras a punto de entrar.',
+      '',
+      'No te he dicho que me enseñaste',
+      { texto: 'a querer con las ___,', respuesta: 'manos', opciones: ['manos', 'palabras', 'ojos'] },
+      'que yo antes quería de lejos',
+      'y creía que eso era querer.',
+      '',
+      'No te he dicho que me da miedo',
+      'que esto se acabe,',
+      { texto: 'y que por eso lo ___ tanto.', respuesta: 'cuido', opciones: ['cuido', 'escondo', 'repito'] },
+      '',
+      'Ahora ya te lo dije.',
+      'Y no pienso decírtelo una sola vez.',
+    ],
   },
 ]
 
@@ -341,7 +416,7 @@ const confesiones = [
 export const FINAL = {
   titulo: 'Y hasta aquí llegó el rompecabezas',
   mensaje:
-    'EDITA: nueve sobres, nueve piezas, nueve pedazos de lo que siento por ti. Gracias por armarlas todas, una por una, con la paciencia con la que haces todo. Te amo, Laura.',
+    'Nueve sobres, nueve piezas, nueve días. Y al final resulta que el rompecabezas no era el de la mesa: era esto. Gracias por armarlo conmigo, mi amor. Te amo.',
   firma: '— Carlos',
   // EDITA: fotos del collage final (pon las que quieras, mínimo 3)
   fotos: [
@@ -369,7 +444,7 @@ export const MINIJUEGOS = [
   { id: 6, titulo: 'Noche Especial', emoji: '🌙', tipo: 'sorpresas', gradiente: 'from-[#f093fb] to-[#fee140]', intro: `${sorpresas.length} sorpresas para ${NOCHE_ESPECIAL}. Ábrelas en el orden que quieras.`, contenido: sorpresas },
   { id: 7, titulo: '9 Razones',      emoji: '💕', tipo: 'puzzle',    gradiente: 'from-[#fa709a] to-[#fee140]', intro: 'Arma el rompecabezas y aparecen mis nueve razones.',          contenido: razones },
   { id: 8, titulo: 'Momentos',       emoji: '😄', tipo: 'adivina',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Fotos borrosas. Adivina con el menor desenfoque posible.',    contenido: adivinanzas },
-  { id: 9, titulo: 'Confesiones',    emoji: '🤐', tipo: 'diario',    gradiente: 'from-[#764ba2] to-[#fa709a]', intro: 'Seis cosas que te he querido decir.',                         contenido: confesiones },
+  { id: 9, titulo: 'El poema',       emoji: '📜', tipo: 'poema',     gradiente: 'from-[#764ba2] to-[#fa709a]', intro: 'Le faltan nueve palabras: una por cada sobre. Ponlas y se arma solo.', contenido: poema },
 ]
 
 export const TOTAL_JUEGOS = MINIJUEGOS.length

@@ -20,7 +20,7 @@ export const CLAVES = [
   { id: 6, clave: 'ESTA_NOCHE', pista: 'Lo que va a pasar el 19, en dos palabras (con guion bajo en medio)' },
   { id: 7, clave: 'TIAMO9',     pista: '"Te amo" en italiano + el número de razones' },
   { id: 8, clave: 'RECUERDOS',  pista: 'Los instantes que más atesoro' },
-  { id: 9, clave: 'SECRETOS',   pista: 'Lo que te he querido decir y nunca dije en voz alta' },
+  { id: 9, clave: 'SECRETOS',   pista: 'Lo que te escribí cuando se me acabaron las formas normales de decírtelo' },
 ]
 
 /** Normaliza una clave para comparar: sin espacios, sin acentos, en mayúsculas. */

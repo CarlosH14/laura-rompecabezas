@@ -12,7 +12,7 @@ import Futuro from './minijuegos/Futuro'
 import CuentaRegresiva from './minijuegos/CuentaRegresiva'
 import NueveRazones from './minijuegos/NueveRazones'
 import Adivina from './minijuegos/Adivina'
-import Confesiones from './minijuegos/Confesiones'
+import Poema from './minijuegos/Poema'
 
 const POR_TIPO = {
   quiz: Canciones,
@@ -23,7 +23,7 @@ const POR_TIPO = {
   sorpresas: CuentaRegresiva,
   puzzle: NueveRazones,
   adivina: Adivina,
-  diario: Confesiones,
+  poema: Poema,
 }
 
 /**

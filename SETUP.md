@@ -43,7 +43,7 @@ Las 9 claves que vienen puestas:
 | 6 | Noche Especial 🌙 | `ESTA_NOCHE` |
 | 7 | 9 Razones 💕 | `TIAMO9` |
 | 8 | Momentos 😄 | `RECUERDOS` |
-| 9 | Confesiones 🤐 | `SECRETOS` |
+| 9 | El poema 📜 | `SECRETOS` |
 
 > **Los nueve piden clave, incluido el #1.** Al escanear el QR, Laura llega al
 > grid con los nueve sobres cerrados y un botón que le dice por dónde empezar.
@@ -60,8 +60,8 @@ Las 9 claves que vienen puestas:
 Todo vive en `src/data/minijuegos.js`, ordenado por minijuego. Por ejemplo:
 
 ```js
-const confesiones = [
-  { numero: 1, emoji: '💭', titulo: 'Confesión #1', texto: 'EDITA: la primera vez que te vi...' },
+const promesas = [
+  { emoji: '🥇', promesa: 'Tratarte como mi prioridad en cada ocasión' },
   ...
 ]
 ```
@@ -77,14 +77,18 @@ texto: 'El día que dijiste 'te amo' primero'   // ❌ rompe el archivo
 
 ### Puedes poner más o menos elementos
 
-Las listas se adaptan solas. Si quieres 4 canciones en vez de 3, copia un
+Las listas se adaptan solas. Si quieres 6 canciones en vez de 5, copia un
 bloque `{ ... }` entero, pégalo debajo y cámbialo. Lo mismo con los momentos de
-la línea de tiempo, las sorpresas, las confesiones, etc.
+la línea de tiempo, las sorpresas, los sueños del futuro, etc. Los contadores
+("3/5", "6 sorpresas") se calculan solos.
 
 **Las dos excepciones:**
 
 - **9 Razones** necesita exactamente **9** razones, con `posicion` del 0 al 8
   (es un tablero 3×3, si faltan piezas no se puede completar).
+- **El poema** funciona con los huecos que quieras, pero ahora son nueve (uno
+  por sobre) y eso es parte de la gracia. Cómo se escribe un verso con hueco
+  está explicado en el propio archivo, encima del poema.
 - **Promesas** funciona mejor con 4 promesas (8 tarjetas). Con más, el tablero
   de memoria se hace largo en el celular.
 
