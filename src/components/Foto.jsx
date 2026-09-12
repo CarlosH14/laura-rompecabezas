@@ -2,11 +2,18 @@ import { useEffect, useState } from 'react'
 import { asset } from '../utils/efectos'
 
 /**
- * Imagen a prueba de fotos-que-todavía-no-existen.
+ * Imagen a prueba de fotos-que-todavía-no-existen y de recortes que decapitan.
  *
- * Mientras Carlos no haya puesto el archivo en public/fotos/, en vez de un
- * icono roto muestra un placeholder con gradiente que dice qué archivo falta.
- * Así puedes ir probando la app antes de tener las 20 fotos listas.
+ * Dos cosas hace este componente:
+ *
+ * 1. Si el archivo no existe todavía, en vez de un icono roto muestra un
+ *    recuadro de color que dice qué foto falta.
+ *
+ * 2. NO RECORTA. Las fotos del celular son verticales y los huecos de la app
+ *    son horizontales: con un recorte normal, a la gente le quedan las cabezas
+ *    fuera. Aquí la foto se ve entera y el hueco que sobra se rellena con la
+ *    misma foto ampliada y desenfocada, como en Instagram. Sale un poco más
+ *    de trabajo para el navegador, pero se descarga una sola vez.
  */
 export default function Foto({
   src,
@@ -41,14 +48,29 @@ export default function Foto({
     )
   }
 
+  const ruta = asset(src)
+
   return (
-    <img
-      src={asset(src)}
-      alt={alt}
-      loading="lazy"
-      decoding="async"
-      onError={() => setRoto(true)}
-      className={`object-cover ${className}`}
-    />
+    <div className={`relative overflow-hidden bg-black/5 ${className}`}>
+      {/* Relleno: la misma foto ampliada y borrosa, solo decorativa */}
+      <img
+        src={ruta}
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
+        decoding="async"
+        className="absolute inset-0 h-full w-full scale-125 object-cover blur-xl"
+      />
+
+      {/* La foto de verdad, entera */}
+      <img
+        src={ruta}
+        alt={alt}
+        loading="lazy"
+        decoding="async"
+        onError={() => setRoto(true)}
+        className="relative h-full w-full object-contain drop-shadow-sm"
+      />
+    </div>
   )
 }
