@@ -60,6 +60,22 @@ export function confettiCorazones() {
  */
 let sonidoActivo = true
 
+/**
+ * Cuánto se deja sonar cada efecto, como mucho.
+ *
+ * El "ding" suena cada vez que acierta algo suelto: un par en el memorama,
+ * una palabra en la sopa. Si el archivo dura dos segundos y medio, al
+ * encadenar aciertos se solapan unos con otros y aquello se vuelve un barullo.
+ * Cortándolo a poco más de un segundo suena a confirmación y no a campanario.
+ *
+ * Si quieres que un efecto suene entero, quítalo de esta lista.
+ */
+const DURACION_MAXIMA = {
+  ding: 1.2,
+  unlock: 2.5,
+  tada: 4,
+}
+
 export function silenciar(valor) {
   sonidoActivo = !valor
 }
@@ -69,6 +85,15 @@ export function sonar(nombre, volumen = 0.3) {
   try {
     const audio = new Audio(asset(`audio/${nombre}.mp3`))
     audio.volume = volumen
+
+    const tope = DURACION_MAXIMA[nombre]
+    if (tope) {
+      setTimeout(() => {
+        audio.pause()
+        audio.src = '' // suelta el archivo en vez de dejarlo en memoria
+      }, tope * 1000)
+    }
+
     const promesa = audio.play()
     if (promesa?.catch) promesa.catch(() => {})
   } catch {
