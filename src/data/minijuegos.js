@@ -230,7 +230,15 @@ const sorpresas = [
 ]
 
 // ─── #7 NUEVE RAZONES ────────────────────────────────────────
-// `posicion` es el hueco del tablero 3x3 al que pertenece la pieza:
+// Una foto partida en nueve pedazos y revuelta. Laura los intercambia hasta
+// armarla, y cada pedazo que cae en su sitio destapa una razón.
+//
+// EDITA: la foto. Se ve entera en el tablero (se recorta lo justo para que
+// quede entre 3:4 y 4:3), así que escoge una en la que se distingan bien las
+// partes: caras, colores, cosas de fondo. Una pared lisa no hay quien la arme.
+const fotoRazones = 'fotos/final-1.jpg'
+
+// `posicion` es el pedazo de la foto al que va pegada la razón:
 //   0 1 2
 //   3 4 5
 //   6 7 8
@@ -442,7 +450,7 @@ export const MINIJUEGOS = [
   { id: 4, titulo: 'Presente',       emoji: '❤️', tipo: 'sopa',      gradiente: 'from-[#fa709a] to-[#fee140]', intro: `${palabrasSopa.length} palabras escondidas y todas hablan de ti. Búscalas arrastrando el dedo. Una te hará falta más adelante.`, contenido: palabrasSopa },
   { id: 5, titulo: 'Futuro',         emoji: '🌟', tipo: 'revelar',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: 'Lo que todavía no ha pasado. Toca cada cosita: están las que hemos hablado mil veces y alguna que nunca te dije.', contenido: suenos },
   { id: 6, titulo: 'Noche Especial', emoji: '🌙', tipo: 'sorpresas', gradiente: 'from-[#f093fb] to-[#fee140]', intro: `${sorpresas.length} sorpresas de lo que va a pasar ${NOCHE_ESPECIAL}. Ábrelas en el orden que quieras; dos no te las cuento del todo.`, contenido: sorpresas },
-  { id: 7, titulo: '9 Razones',      emoji: '💕', tipo: 'puzzle',    gradiente: 'from-[#fa709a] to-[#fee140]', intro: 'Nueve piezas y nueve razones. Arma el rompecabezas y van saliendo de una en una.', contenido: razones },
+  { id: 7, titulo: '9 Razones',      emoji: '💕', tipo: 'puzzle',    gradiente: 'from-[#fa709a] to-[#fee140]', intro: 'Una foto nuestra, rota en nueve pedazos y revuelta. Ármala intercambiando piezas: cada una que encaje te dice una razón.', contenido: razones, foto: fotoRazones },
   { id: 8, titulo: 'Momentos',       emoji: '😄', tipo: 'adivina',   gradiente: 'from-[#667eea] to-[#764ba2]', intro: `${adivinanzas.length} fotos borrosas. Cuanto antes adivines, más puntos; y verlas mejor te va a costar.`, contenido: adivinanzas },
   { id: 9, titulo: 'El poema',       emoji: '📜', tipo: 'poema',     gradiente: 'from-[#764ba2] to-[#fa709a]', intro: 'Te escribí algo. Le faltan nueve palabras, una por cada sobre, y las tienes que poner tú.', contenido: poema },
 ]

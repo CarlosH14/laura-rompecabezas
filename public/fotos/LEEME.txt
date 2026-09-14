@@ -46,7 +46,9 @@ MINIJUEGO #8 — Momentos  (salen BORROSAS y se van aclarando)
 
 PANTALLA FINAL — el collage
 ---------------------------
-  final-1.jpg     ->  la mejor de todas (sale tambien como premio del minijuego #7)
+  final-1.jpg     ->  la mejor de todas (es tambien la que se arma en el
+                      rompecabezas del minijuego #7: que tenga partes
+                      distintas entre si, o no hay forma de armarla)
   final-2.jpg
   final-3.jpg
   final-4.jpg

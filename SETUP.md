@@ -85,7 +85,9 @@ la línea de tiempo, las sorpresas, los sueños del futuro, etc. Los contadores
 **Las dos excepciones:**
 
 - **9 Razones** necesita exactamente **9** razones, con `posicion` del 0 al 8
-  (es un tablero 3×3, si faltan piezas no se puede completar).
+  (es un tablero 3×3, si faltan piezas no se puede completar). La foto que se
+  arma es `fotoRazones`, justo encima de las razones: escoge una con partes
+  bien distintas entre sí, que una pared lisa no hay quien la arme.
 - **El poema** funciona con los huecos que quieras, pero ahora son nueve (uno
   por sobre) y eso es parte de la gracia. Cómo se escribe un verso con hueco
   está explicado en el propio archivo, encima del poema.

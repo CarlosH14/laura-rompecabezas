@@ -20,7 +20,7 @@ sobre físico a sobre físico, hasta llegar a la pantalla final.
 | 4 | Presente ❤️ | Sopa de letras con sus cualidades |
 | 5 | Futuro 🌟 | Un paisaje nocturno; cada cosita esconde un sueño |
 | 6 | Noche Especial 🌙 | Cinco botones-sorpresa para esa noche |
-| 7 | 9 Razones 💕 | Rompecabezas 3×3; cada pieza revela una razón |
+| 7 | 9 Razones 💕 | Una foto partida en 9 y revuelta; se intercambian piezas y cada una que encaja revela una razón |
 | 8 | Momentos 😄 | Fotos borrosas: adivinar con el menor desenfoque posible da más puntos |
 | 9 | El poema 📜 | Un poema en tres partes al que le faltan nueve palabras: una por sobre |
 
@@ -84,9 +84,13 @@ cambia de teléfono, empieza de cero.
 generador con semilla fija coloca las palabras que pongas y rellena el resto.
 Cambias las palabras y el tablero se rehace solo, siempre igual entre recargas.
 
-**Se toca, no se arrastra.** El rompecabezas del #7 se juega tocando la pieza
-y luego el hueco, porque el arrastrar-y-soltar de HTML5 no existe en móvil. En
-computador además se puede arrastrar. La sopa de letras acepta las dos cosas.
+**El rompecabezas del #7 es la foto misma.** No hay números ni huecos: los
+nueve pedazos de la foto empiezan revueltos (ninguno en su sitio) y se
+intercambian de dos en dos, tocando uno y luego otro, o arrastrando uno encima
+de otro. El arrastre lo hace Framer Motion, que sí funciona en móvil. Cada
+pedazo que cae en su sitio se queda fijo y destapa su razón; hay tres pistas de
+dos segundos y medio para ver la foto entera. La sopa de letras acepta tocar y
+arrastrar.
 
 **Todo aguanta que falten archivos.** Si una foto o un audio no existe todavía,
 sale un placeholder que dice qué archivo falta en vez de un icono roto.
